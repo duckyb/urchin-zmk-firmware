@@ -8,135 +8,164 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
-#include "keymap_italian.h"
+#include <dt-bindings/zmk/ext_power.h>
+#include "swe_keys.h"
 
-// Layer definitions
-    #define BASE 0
-    #define SYM 1
-    #define EXT 2
-    #define FNC 3
-    #define SYM2 4
-    #define ACCENT 5
-	#define SETTINGS 6
-// -----------------
-
-&sk {
-	// don't release mods on other mods presses
-    ignore-modifiers;
-};
+#define DEFAULT     0
+#define QWERTY      1
+#define GAMING      2
+#define SYMBOLS_ENG 3
+#define SYMBOLS_SWE 4
+#define FUNC        5
+#define NUMBER      6
+#define SETTINGS    7
 
 / {
-	macros {
-		// sometimes my device thinks a modifier is being held down
-		// pressing all modifiers fixes it.
-		unstick: unstick {
-			label = "ZM_unstick";
-			compatible = "zmk,behavior-macro";
-			#binding-cells = <0>;
-			bindings = <&kp LSHIFT &kp RSHIFT &kp LCTRL &kp RCTRL &kp LALT &kp RALT &kp LGUI &kp RGUI>;
-		};
-	};
-
-    combos {
-		compatible = "zmk,combos";
-		// both right thumb keys
-        combo_accent {
-			timeout-ms = <200>;
-			key-positions = <32 33>;
-			bindings = <&mo ACCENT>;
+    behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
         };
-		// internal-left & external-right thumb keys
-		combo_sym2 {
-			timeout-ms = <200>;
-			key-positions = <31 33>;
-			bindings = <&mo SYM2>;
-		};
-		// both left thumb keys
-		combo_settings {
-			timeout-ms = <200>;
-			key-positions = <30 31>;
-			bindings = <&mo SETTINGS>;
-		};
+        hs: homerow_mods_slow {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS_SLOW";
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+    };
+    cond_layers {
+        compatible = "zmk,conditional-layers";
+        // Define SETTINGS layer as tri-state
+        func_tristate {
+            if-layers = <SYMBOLS_SWE FUNC>;
+            then-layer = <SETTINGS>;
+        };
     };
 
+/*           34 Keys
+╭──────────────╮ ╭──────────────╮
+│ 0  1  2  3  4│ │ 5  6  7  8  9│
+│10 11 12 13 14│ │15 16 17 18 19│
+│20 21 22 23 24│ │25 26 27 28 29│
+╰────────╮30 31│ │32 33╭────────╯
+         ╰─────╯ ╰─────╯       */
+/*    combos {
+        compatible = "zmk,combos";
+
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            bindings = <&kp ESC>;
+        };
+        combo_tab {
+            timeout-ms = <50>;
+            key-positions = <10 11>;
+            bindings = <&kp TAB>;
+        };
+        combo_ralt {
+            timeout-ms = <50>;
+            key-positions = <17 16>;
+            bindings = <&kp RALT>;
+        };
+        combo_lalt {
+            timeout-ms = <50>;
+            key-positions = <11 12>;
+            bindings = <&kp LALT>;
+        };
+        combo_lgui {
+            timeout-ms = <50>;
+            key-positions = <12 13>;
+            bindings = <&kp LGUI>;
+        };
+        combo_rgui {
+            timeout-ms = <50>;
+            key-positions = <17 18>;
+            bindings = <&kp RGUI>;
+        };
+    }; */
+
     keymap {
-		compatible = "zmk,keymap";
+        compatible = "zmk,keymap";
 
-        // Base alpha layer
-		default_layer {
-			label = "Base";
-			bindings = <
-			&kp Q &kp W &kp E &kp R &kp T           &kp Y &kp U  &kp I     &kp O   &kp P 
-			&kp A &kp S &kp D &kp F &kp G           &kp H &kp J  &kp K     &kp L &kp IT_OGRV
-			&kp Z &kp X &kp C &kp V &kp B           &kp N &kp M  &kp COMMA &kp DOT &kp IT_UGRV
-							&mo EXT &mt LSHIFT SPACE           &kp SPACE &sl SYM
-			>;
-		};
+        default_layer {
+            bindings = <
+            &kp Q       &kp W       &kp F         &kp P           &kp B       &kp J                 &kp L         &kp U         &kp Y       &kp DEL
+            &hs LGUI A  &hm LALT R  &hm LSHIFT S  &hm LCTRL T     &kp G       &kp M                 &hm RCTRL N   &hm RSHIFT E  &hm RALT I  &hs RGUI O
+            &kp Z       &kp X       &kp C         &kp D           &kp V       &kp K                 &kp H         &kp COMMA     &kp DOT     &kp ENTER
+                                                  &lt NUMBER TAB  &kp SPACE   &lt SYMBOLS_SWE BSPC  &lt FUNC ESC
 
-        // Numbers and high frequency symbols
-		sym_layer {
-			label = "Sym.";
-			bindings = <
-			&kp N1 &kp N2 &kp N3 &kp N4 &kp N5		                                    &kp N6 &kp N7 &kp N8 &kp N9 &kp N0
-			&kp IT_LESS &kp IT_USD &kp IT_LPAR &kp IT_LBRC &kp IT_LBKT  &kp IT_EQL &kp IT_QUES &kp IT_SQUOT &kp IT_MINUS &kp IT_AST
-			&kp IT_GREAT &kp IT_PERC &kp IT_RPAR &kp IT_RBRC &kp IT_RBKT 	&kp IT_AT &kp IT_EXCL &kp IT_DQUOT &kp IT_PLUS &kp IT_FSLH
-														&mo FNC  &mo SYM2       &trans &trans
-			>;
-		};
+            >;
+        };
 
-        // Main modifiers and arrow keys
-		ext_layer {
-			label = "Mods";
-			bindings = <
-			&kp ESC  &kp C_PREV &kp C_PP  &kp C_NEXT  &kp C_PAUSE    	&kp PG_UP  &kp HOME &kp UP &kp END &kp CAPS
-			&sk LALT &sk LGUI  &sk LSHIFT  &sk LCTRL  &kp RALT 			&kp PG_DN &kp LEFT  &kp DOWN  &kp RIGHT   &kp DEL
-			&kp LC(Z)  &kp LC(X) &kp LC(C) &kp TAB   &kp LC(V)          &kp LC(BSPC) &kp BSPC &trans &trans  &trans
-																		&trans &kp LCTRL    &kp ENTER  &mo FNC 
-			>;
-		};
+        qwerty_layer {
+            bindings = <
+            &kp Q       &kp W       &kp E         &kp R           &kp T       &kp Y                 &kp U         &kp I         &kp O       &kp P
+            &hs LGUI A  &hm LALT S  &hm LSHIFT D  &hm LCTRL F     &kp G       &kp H                 &hm RCTRL J   &hm RSHIFT J  &hm RALT L  &hs RGUI BSPC
+            &kp Z       &kp X       &kp C         &kp V           &kp B       &kp N                 &kp M         &kp COMMA     &kp DOT     &kp ENTER
+                                                  &lt NUMBER TAB  &kp SPACE   &lt SYMBOLS_SWE BSPC  &lt FUNC ESC
+            >;
+        };
 
-        // Function keys with modifiers
-		fnc_layer {
-			label = "FRow";
-			bindings = <
-			&kp F1 &kp F2 &kp F3 &kp F4 &kp F5                  &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 
-			&sk LALT &sk LGUI &sk LSHIFT &sk LCTRL &kp RALT     &kp F11 &kp F12  &kp PRINTSCREEN &trans &trans
-			&none &none &none &none &none				          &none &none &none &none &none 
-							  &none &none              &none &none  
-			>;
-		};
+        gaming_layer {
+            bindings = <
+            &kp N1      &kp N2  &kp N3  &kp N4     &kp N5     &kp J            &kp L        &kp U         &kp Y       &kp BSPC
+            &kp TAB     &kp Q   &kp W   &kp E      &kp R      &kp M            &hm RCTRL N  &hm RSHIFT E  &hm RALT I  &hs RGUI O
+            &kp LSHIFT  &kp A   &kp S   &kp D      &kp F      &kp M            &kp N        &kp E         &kp I       &kp O
+                                        &kp LCTRL  &kp SPACE  &mo SYMBOLS_SWE  &mo FUNC
+            >;
+        };
 
-        // Low frequency symbols.
-		symbols_2_layer {
-			label = "Sym.2";
-			bindings = <
-			&kp IT_CARET &kp IT_UNDER &kp IT_PND &kp IT_EUR &kp IT_HASH         &none &none &none &none &none 
-			&kp IT_BKTK &kp IT_TILDE &kp IT_BSLH &kp IT_PIPE &kp IT_AND         &none &none &none &none &none
-			&none 			&none 			 &kp IT_SECT &kp IT_CCED &kp IT_DEG				  &none &none &none &none &none
-																	&none &none        	&none &none 
-			>;
-		};
+        symbols_eng_layer {
+            bindings = <
+            &kp DQT       &kp AT         &kp EXCL         &kp PLUS         &kp BSLH    &kp LPAR   &kp RPAR          &kp UNDER         &kp QMARK      &kp N0
+            &hs LGUI SQT  &hm LALT AMPS  &hm LSHIFT STAR  &hm LCTRL GRAVE  &kp LBKT    &kp MINUS  &hm RCTRL TILDE2  &hm RSHIFT EQUAL  &hm RALT PIPE  &hs RGUI N1
+            &kp PRCNT     &kp HASH       &kp CARET        &kp DLLR         &kp RBKT    &kp LBRC   &kp RBRC          &kp GT            &kp LT         &kp N2
+                                                          &kp FSLH         &kp SPACE   &trans     &trans
+            >;
+        };
 
-        // Used to type regional accents.
-		accent_layer {
-			label = "Accent";
-			bindings = <
-			&none &none &none &kp IT_CEGR &none                         &none &none &none &none &none 
-			&kp IT_AGRV &kp IT_IGRV &kp IT_OGRV &kp IT_EGRV &kp IT_EACU &none &none &none &none &none
-			&none &none &none &kp IT_UGRV &none                         &none &none &none &none &none
-									&none &none                         &none &none 
-			>;
-		};
+        symbols_swe_layer {
+            bindings = <
+            &kp SE_DQT       &kp SE_AT         &kp SE_EXCL         &kp SE_PLUS         &kp SE_BSLH   &kp SE_LPAR   &kp SE_RPAR         &kp SE_UNDER         &kp SE_QMARK      &kp SE_AE
+            &hs LGUI SE_SQT  &hm LALT SE_AMPS  &hm LSHIFT SE_STAR  &hm LCTRL SE_GRAVE  &kp SE_LBKT   &kp SE_MINUS  &hm RCTRL SE_TILDE  &hm RSHIFT SE_EQUAL  &hm RALT SE_PIPE  &hs RGUI SE_AA
+            &kp SE_PRCNT     &kp SE_HASH       &kp SE_CARET        &kp SE_DLLR         &kp SE_RBKT   &kp SE_LBRC   &kp SE_RBRC         &kp SE_LT            &kp SE_GT         &kp SE_OO
+                                                                   &kp SE_FSLH         &kp SPACE     &trans        &trans
+            >;
+        };
 
-        // Used to change the keyboard's settings.
-		settings_layer {
-				label = "Sett.";
-				bindings = <
-				&bootloader &none &none &bt BT_CLR &bt BT_SEL 0               &bt BT_SEL 3 &none &unstick &none &bootloader 
-				&none &none &none &none      &bt BT_SEL 1 						  &bt BT_SEL 4 &none &none &none &none
-				&none &none &none &none      &bt BT_SEL 2               &bt BT_SEL 5 &none &none &none &none
-										&none &none                         &none &none 
-				>;
-		};
-	};
+        func_layer {
+            bindings = <
+            &kp ESC   &kp F1  &kp F2   &kp F3   &kp F4     &kp HOME    &kp PG_UP  &kp UP      &kp PG_DN   &kp DEL
+            &kp TAB   &kp F5  &kp F6   &kp F7   &kp F8     &kp END     &kp LEFT   &kp DOWN    &kp RIGHT   &kp K_VOL_UP
+            &kp CAPS  &kp F9  &kp F10  &kp F11  &kp F12    &kp C_PREV  &kp C_PP   &kp C_NEXT  &kp K_MUTE  &kp K_VOL_DN
+                                       &kp N3   &kp SPACE  &trans      &trans
+            >;
+        };
+
+        number_layer {
+            bindings = <
+            &kp N1       &kp N2      &kp N3         &kp N4        &kp N5        &kp N6        &kp N7        &kp N8         &kp N9       &kp N0
+            &hs LGUI  N6 &hm LALT N7 &hm LSHIFT N8  &hm LCTRL N9  &kp N0        &kp SE_MINUS  &hm RCTRL N4  &hm RSHIFT N5  &hm RALT N6  &hm RGUI COMMA
+            &trans       &trans      &trans         &trans        &kp SE_EQUAL  &kp SE_PLUS   &kp N1        &kp N2         &kp N3       &kp DOT
+                                                    &trans        &kp SPACE     &kp BSPC      &kp N0
+            >;
+        };
+
+        settings_layer {
+            bindings = <
+            &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4   &ext_power EP_ON  &ext_power EP_OFF  &trans      &trans  &trans
+            &bt BT_CLR    &trans        &trans        &trans        &trans         &trans            &to QWERTY         &to DEFAULT &trans  &to GAMING
+            &out OUT_BLE  &out OUT_USB  &trans        &trans        &bootloader    &bootloader       &trans             &trans      &trans  &kp ENTER
+                                                      &trans        &kp SPACE      &trans            &trans
+            >;
+        };
+    };
 };
