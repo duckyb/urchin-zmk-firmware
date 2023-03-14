@@ -119,8 +119,8 @@
             bindings = <
             &kp N1          &kp N2  &kp N3  &kp N4     &kp N5     &kp J            &kp L        &kp U         &kp Y       &kp BSPC
             &mo GAMING_SEC  &kp Q   &kp W   &kp E      &kp R      &kp M            &hm RCTRL N  &hm RSHIFT E  &hm RALT I  &hs RGUI O
-            &kp LSHIFT      &kp A   &kp S   &kp D      &kp F      &kp M            &kp N        &kp E         &kp I       &kp O
-                                        &kp LCTRL  &kp SPACE  &mo SYMBOLS_SWE  &mo FUNC
+            &kp LCTRL &kp A   &kp S   &kp D      &kp F      &kp M            &kp N        &kp E         &kp I       &kp O
+                                        &kp LALT &kp SPACE  &mo SYMBOLS_SWE  &mo FUNC
             >;
         };
 
