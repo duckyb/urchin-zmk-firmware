@@ -172,9 +172,9 @@
         settings_layer {
             bindings = <
             &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4   &ext_power EP_ON  &ext_power EP_OFF  &trans      &trans  &trans
-            &bt BT_CLR    &trans        &trans        &trans        &trans         &trans            &to QWERTY         &to DEFAULT &trans  &to GAMING
-            &out OUT_BLE  &out OUT_USB  &trans        &trans        &bootloader    &bootloader       &trans             &trans      &trans  &kp ENTER
-                                                      &trans        &kp SPACE      &trans            &trans
+            &bt BT_CLR    &trans        &trans        &trans        &trans         &to DEFAULT       &to GAMING         &to QWERTY  &trans  &trans
+            &out OUT_BLE  &out OUT_USB  &trans        &trans        &bootloader    &bootloader       &trans             &trans      &trans  &trans
+                                                      &trans        &trans         &trans            &trans
             >;
         };
     };
