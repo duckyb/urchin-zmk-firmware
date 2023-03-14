@@ -14,11 +14,12 @@
 #define DEFAULT     0
 #define QWERTY      1
 #define GAMING      2
-#define SYMBOLS_ENG 3
-#define SYMBOLS_SWE 4
-#define FUNC        5
-#define NUMBER      6
-#define SETTINGS    7
+#define GAMING_SEC  3
+#define SYMBOLS_ENG 4
+#define SYMBOLS_SWE 5
+#define FUNC        6
+#define NUMBER      7
+#define SETTINGS    8
 
 / {
     behaviors {
@@ -116,10 +117,19 @@
 
         gaming_layer {
             bindings = <
-            &kp N1      &kp N2  &kp N3  &kp N4     &kp N5     &kp J            &kp L        &kp U         &kp Y       &kp BSPC
-            &kp TAB     &kp Q   &kp W   &kp E      &kp R      &kp M            &hm RCTRL N  &hm RSHIFT E  &hm RALT I  &hs RGUI O
-            &kp LSHIFT  &kp A   &kp S   &kp D      &kp F      &kp M            &kp N        &kp E         &kp I       &kp O
+            &kp N1          &kp N2  &kp N3  &kp N4     &kp N5     &kp J            &kp L        &kp U         &kp Y       &kp BSPC
+            &sl GAMING_SEC  &kp Q   &kp W   &kp E      &kp R      &kp M            &hm RCTRL N  &hm RSHIFT E  &hm RALT I  &hs RGUI O
+            &kp LSHIFT      &kp A   &kp S   &kp D      &kp F      &kp M            &kp N        &kp E         &kp I       &kp O
                                         &kp LCTRL  &kp SPACE  &mo SYMBOLS_SWE  &mo FUNC
+            >;
+        };
+
+        gaming_secondary_layer {
+            bindings = <
+            &kp F1      &kp F2  &kp F3  &kp F4     &kp F5     &kp J            &kp L        &kp U         &kp Y       &kp BSPC
+            &to GAMING  &kp Z   &kp X   &kp C      &kp V      &kp M            &hm RCTRL N  &hm RSHIFT E  &hm RALT I  &hs RGUI O
+            &kp TAB     &kp B   &kp N   &kp M      &kp COMMA  &kp M            &kp N        &kp E         &kp I       &kp O
+                                        &kp TAB &kp SPACE  &mo SYMBOLS_SWE  &mo FUNC
             >;
         };
 
