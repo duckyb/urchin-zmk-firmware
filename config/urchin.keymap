@@ -20,6 +20,7 @@
 #define FUNC        6
 #define NUMBER      7
 #define SETTINGS    8
+#define DEBUGGING   9
 
 / {
     behaviors {
@@ -172,9 +173,18 @@
         settings_layer {
             bindings = <
             &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4   &ext_power EP_ON  &ext_power EP_OFF  &trans      &trans  &trans
-            &bt BT_CLR    &trans        &trans        &trans        &trans         &to DEFAULT       &to GAMING         &to QWERTY  &trans  &trans
+            &bt BT_CLR    &trans        &trans        &trans        &trans         &to DEFAULT       &to GAMING         &to QWERTY  &trans  &to DEBUGGING
             &out OUT_BLE  &out OUT_USB  &trans        &trans        &bootloader    &bootloader       &trans             &trans      &trans  &trans
                                                       &trans        &trans         &trans            &trans
+            >;
+        };
+
+        debugging_layer {
+            bindings = <
+            &kp DQT       &kp AT         &kp EXCL         &kp PLUS         &kp BSLH    &kp LPAR   &kp RPAR          &kp UNDER         &kp QMARK      &kp N0
+            &hs LGUI SQT  &hm LALT AMPS  &hm LSHIFT STAR  &hm LCTRL GRAVE  &kp LBKT    &kp MINUS  &hm RCTRL TILDE2  &hm RSHIFT EQUAL  &hm RALT PIPE  &hs RGUI N1
+            &kp PRCNT     &kp HASH       &kp CARET        &kp DLLR         &kp RBKT    &kp LBRC   &kp RBRC          &kp GT            &kp LT         &kp N2
+                                                          &lt NUMBER TAB  &kp SPACE   &lt SYMBOLS_SWE BSPC  &lt FUNC ESC
             >;
         };
     };
