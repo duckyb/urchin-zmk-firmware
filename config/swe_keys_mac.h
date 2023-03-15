@@ -80,7 +80,7 @@
 #define SEM_RPAR  LS(N9)        // )
 #define SEM_LBKT  LA(N8)        // [
 #define SEM_RBKT  LA(N9)        // ]
-#define SEM_LBRC  LS(LA(N7))    // {
+#define SEM_LBRC  LS(LA(N8))    // {
 #define SEM_RBRC  LS(LA(N9))    // }
 #define SEM_PLUS  MINUS         // +
 #define SEM_MINUS FSLH          // -
@@ -91,8 +91,8 @@
 #define SEM_SQT   BSLH          // '
 #define SEM_GRAVE PLUS          // `
 #define SEM_TILDE LA(RBKT)      // ~
-#define SEM_LT    NON_US_BACKSLASH // <
-#define SEM_GT    LS(SEM_LT)   // >
-#define SEM_BSLH  LA(LS(N7))   // (backslash)
-#define SEM_PIPE  LA(N7)   // |
+#define SEM_LT    LT            // <
+#define SEM_GT    GT            // >
+#define SEM_BSLH  LA(LS(N7))    // (backslash)
+#define SEM_PIPE  LA(N7)        // |
 
