@@ -91,8 +91,8 @@
 #define SEM_SQT   BSLH          // '
 #define SEM_GRAVE PLUS          // `
 #define SEM_TILDE LA(RBKT)      // ~
-#define SEM_LT    LS(COMMA)     // <
-#define SEM_GT    LS(DOT)       // >
+#define SEM_LT    NON_US_BSLH     // <
+#define SEM_GT    LS(NON_US_BSLH)       // >
 #define SEM_BSLH  LA(LS(N7))    // (backslash)
 #define SEM_PIPE  LA(N7)        // |
 
