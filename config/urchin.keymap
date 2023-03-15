@@ -9,6 +9,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/ext_power.h>
+#include "swe_keys_mac.h"
 #include "swe_keys.h"
 
 #define DEFAULT     0
@@ -132,12 +133,45 @@
             >;
         };
 
+        /*
+" SE_DQT
+@ SE_AT
+! SE_EXCL
++ SE_PLUS
+\ SE_BSLH
+( SE_LPAR
+) SE_RPAR
+_ SE_UNDER
+? SE_QMARK
+Å SE_AE
+' SE_SQT
+& SE_AMPS
+* SE_STAR
+` SE_GRAVE *
+[ SE_LBKT
+- SE_MINUS
+~ SE_TILDE
+= SE_EQUAL
+| SE_PIPE *
+Ä SE_AA
+% SE_PRCNT
+# SE_HASH
+^ SE_CARET
+$ SE_DLLR
+] SE_RBKT
+{ SE_LBRC
+} SE_RBRC
+< SE_LT
+> SE_GT
+Ö SE_OO
+        */
+
         symbols_swe_layer {
             bindings = <
-            &kp SE_DQT       &kp SE_AT         &kp SE_EXCL         &kp SE_PLUS         &kp SE_BSLH   &kp SE_LPAR   &kp SE_RPAR         &kp SE_UNDER         &kp SE_QMARK      &kp SE_AE
-            &hs LGUI SE_SQT  &hm LALT SE_AMPS  &hm LSHIFT SE_STAR  &hm LCTRL SE_GRAVE  &kp SE_LBKT   &kp SE_MINUS  &hm RCTRL SE_TILDE  &hm RSHIFT SE_EQUAL  &hm RALT SE_PIPE  &hs RGUI SE_AA
-            &kp SE_PRCNT     &kp SE_HASH       &kp SE_CARET        &kp SE_DLLR         &kp SE_RBKT   &kp SE_LBRC   &kp SE_RBRC         &kp SE_LT            &kp SE_GT         &kp SE_OO
-                                                                   &kp SE_FSLH         &kp SPACE     &trans        &trans
+            &kp SEM_DQT       &kp SEM_AT         &kp SEM_EXCL         &kp SEM_PLUS         &kp SEM_BSLH   &kp SEM_LPAR   &kp SEM_RPAR         &kp SEM_UNDER         &kp SEM_QMARK      &kp SEM_AE
+            &hs LGUI SEM_SQT  &hm LALT SEM_AMPS  &hm LSHIFT SEM_STAR  &hm LCTRL SEM_GRAVE  &kp SEM_LBKT   &kp SEM_MINUS  &hm RCTRL SEM_TILDE  &hm RSHIFT SEM_EQUAL  &hm RALT SEM_PIPE  &hs RGUI SEM_AA
+            &kp SEM_PRCNT     &kp SEM_HASH       &kp SEM_CARET        &kp SEM_DLLR         &kp SEM_RBKT   &kp SEM_LBRC   &kp SEM_RBRC         &kp SEM_LT            &kp SEM_GT         &kp SEM_OO
+                                                                   &kp SEM_FSLH         &kp SPACE     &trans        &trans
             >;
         };
 
@@ -153,8 +187,8 @@
         number_layer {
             bindings = <
             &kp N1       &kp N2      &kp N3         &kp N4        &kp N5        &kp N6        &kp N7        &kp N8         &kp N9       &kp N0
-            &hs LGUI  N6 &hm LALT N7 &hm LSHIFT N8  &hm LCTRL N9  &kp N0        &kp SE_MINUS  &hm RCTRL N4  &hm RSHIFT N5  &hm RALT N6  &hm RGUI COMMA
-            &trans       &trans      &trans         &trans        &kp SE_EQUAL  &kp SE_PLUS   &kp N1        &kp N2         &kp N3       &kp DOT
+            &hs LGUI  N6 &hm LALT N7 &hm LSHIFT N8  &hm LCTRL N9  &kp N0        &kp SEM_MINUS  &hm RCTRL N4  &hm RSHIFT N5  &hm RALT N6  &hm RGUI COMMA
+            &trans       &trans      &trans         &trans        &kp SEM_EQUAL  &kp SEM_PLUS   &kp N1        &kp N2         &kp N3       &kp DOT
                                                     &trans        &kp SPACE     &kp BSPC      &kp N0
             >;
         };
