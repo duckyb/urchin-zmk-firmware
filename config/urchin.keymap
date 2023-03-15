@@ -9,8 +9,8 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/ext_power.h>
-#include "swe_keys_mac.h"
 #include "swe_keys.h"
+#include "swe_keys_mac.h"
 
 #define DEFAULT     0
 #define QWERTY      1
