@@ -168,9 +168,9 @@ $ SE_DLLR
 
         symbols_swe_layer {
             bindings = <
-            &kp SEM_DQT       &kp SEM_AT         &kp SEM_EXCL         &kp SEM_PLUS         &kp SEM_BSLH   &kp SEM_LPAR   &kp SEM_RPAR         &kp SEM_UNDER         &kp SEM_QMARK      &kp SEM_AE
-            &hs LGUI SEM_SQT  &hm LALT SEM_AMPS  &hm LSHIFT SEM_STAR  &hm LCTRL SEM_GRAVE  &kp SEM_LBKT   &kp SEM_MINUS  &hm RCTRL SEM_TILDE  &hm RSHIFT SEM_EQUAL  &hm RALT SEM_PIPE  &hs RGUI SEM_AA
-            &kp SEM_PRCNT     &kp SEM_HASH       &kp SEM_CARET        &kp SEM_DLLR         &kp SEM_RBKT   &kp SEM_LBRC   &kp SEM_RBRC         &kp SEM_LT            &kp SEM_GT         &kp SEM_OO
+            &kp SEM_DQT       &kp SEM_AT         &kp SEM_EXCL         &kp SEM_LBKT         &kp SEM_RBKT   &kp SEM_LPAR   &kp SEM_RPAR         &kp SEM_UNDER         &kp SEM_QMARK      &kp SEM_AE
+            &hs LGUI SEM_SQT  &hm LALT SEM_AMPS  &hm LSHIFT SEM_STAR  &hm LCTRL SEM_GRAVE  &kp SEM_PLUS   &kp SEM_MINUS  &hm RCTRL SEM_TILDE  &hm RSHIFT SEM_EQUAL  &hm RALT SEM_PIPE  &hs RGUI SEM_AA
+            &kp SEM_PRCNT     &kp SEM_HASH       &kp SEM_CARET        &kp SEM_DLLR         &kp SEM_BSLH   &kp SEM_LBRC   &kp SEM_RBRC         &kp SEM_LT            &kp SEM_GT         &kp SEM_OO
                                                                    &kp SEM_FSLH         &kp SPACE     &trans        &trans
             >;
         };
