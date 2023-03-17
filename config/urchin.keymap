@@ -118,9 +118,9 @@
         gaming_layer {
             bindings = <
             &kp N1          &kp N2  &kp N3  &kp N4     &kp N5     &kp J            &kp L        &kp U         &kp Y       &kp BSPC
-            &kp LSHIFT &kp Q   &kp W   &kp E      &kp R      &kp M            &hm RCTRL N  &hm RSHIFT E  &hm RALT I  &hs RGUI O
-            &kp LCTRL &kp A   &kp S   &kp D      &kp F      &kp M            &kp N        &kp E         &kp I       &kp O
-                                        &mo GAMING_SEC &kp SPACE  &mo SYMBOLS_SWE  &mo FUNC
+            &kp LSHIFT      &kp Q   &kp W   &kp E      &kp R      &kp M            &hm RCTRL N  &hm RSHIFT E  &hm RALT I  &hs RGUI O
+            &kp LCTRL       &kp A   &kp S   &kp D      &kp F      &kp M            &kp N        &kp E         &kp I       &kp O
+                                            &mo GAMING_SEC &kp SPACE  &mo SYMBOLS_SWE  &mo FUNC
             >;
         };
 
@@ -133,53 +133,20 @@
             >;
         };
 
-        /*
-" SE_DQT
-@ SE_AT
-! SE_EXCL
-+ SE_PLUS
-\ SE_BSLH
-( SE_LPAR
-) SE_RPAR
-_ SE_UNDER
-? SE_QMARK
-Å SE_AE
-' SE_SQT
-& SE_AMPS
-* SE_STAR
-` SE_GRAVE *
-[ SE_LBKT
-- SE_MINUS
-~ SE_TILDE
-= SE_EQUAL
-| SE_PIPE *
-Ä SE_AA
-% SE_PRCNT
-# SE_HASH
-^ SE_CARET
-$ SE_DLLR
-] SE_RBKT
-{ SE_LBRC
-} SE_RBRC
-< SE_LT
-> SE_GT
-Ö SE_OO
-        */
-
         symbols_swe_layer {
             bindings = <
             &kp SEM_DQT       &kp SEM_AT         &kp SEM_EXCL         &kp SEM_LBKT         &kp SEM_RBKT   &kp SEM_LPAR   &kp SEM_RPAR         &kp SEM_UNDER         &kp SEM_QMARK      &kp SEM_AE
             &hs LGUI SEM_SQT  &hm LALT SEM_AMPS  &hm LSHIFT SEM_STAR  &hm LCTRL SEM_GRAVE  &kp SEM_PLUS   &kp SEM_MINUS  &hm RCTRL SEM_TILDE  &hm RSHIFT SEM_EQUAL  &hm RALT SEM_PIPE  &hs RGUI SEM_AA
             &kp SEM_PRCNT     &kp SEM_HASH       &kp SEM_CARET        &kp SEM_DLLR         &kp SEM_BSLH   &kp SEM_LBRC   &kp SEM_RBRC         &kp SEM_LT            &kp SEM_GT         &kp SEM_OO
-                                                                   &kp SEM_FSLH         &kp SPACE     &trans        &trans
+                                                                      &kp SEM_FSLH         &kp SPACE     &trans        &trans
             >;
         };
 
         func_layer {
             bindings = <
             &kp ESC   &kp F1  &kp F2   &kp F3   &kp F4     &kp HOME    &kp PG_UP  &kp UP      &kp PG_DN   &kp DEL
-            &kp TAB   &kp F5  &kp F6   &kp F7   &kp F8     &kp END     &kp LEFT   &kp DOWN    &kp RIGHT   &kp K_VOL_UP
-            &kp CAPS  &kp F9  &kp F10  &kp F11  &kp F12    &kp C_PREV  &kp C_PP   &kp C_NEXT  &kp K_MUTE  &kp K_VOL_DN
+            &kp TAB   &kp F5  &kp F6   &kp F7   &kp F8     &kp END     &kp LEFT   &kp DOWN    &kp RIGHT   &kp C_VOL_UP
+            &kp CAPS  &kp F9  &kp F10  &kp F11  &kp F12    &kp C_PREV  &kp C_PP   &kp C_NEXT  &kp C_MUTE  &kp C_VOL_DN
                                        &kp N3   &kp SPACE  &trans      &trans
             >;
         };
