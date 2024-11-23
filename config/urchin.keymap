@@ -90,9 +90,9 @@
 			label = "Base";
 			bindings = <
 			&kp Q &kp W &kp E &kp R &kp T           &kp Y &kp U  &kp I     &kp O   &kp P 
-			&kp A &kp S &kp D &kp F &kp G           &kp H &kp J  &kp K     &kp L &kp IT_OGRV
-			&kp Z &kp X &kp C &kp V &kp B           &kp N &kp M  &kp COMMA &kp DOT &kp IT_UGRV
-							&mo EXT &qt LSHIFT SPACE           &kp SPACE &sl SYM
+			&kp A &kp S &kp D &kp F &kp G           &kp H &kp J  &kp K     &kp L &kp BR_CCEDILA SEMI 
+			&kp Z &kp X &kp C &kp V &kp B           &kp N &kp M  &kp COMMA &kp DOT &kp BR_CCEDILA SEMI 
+			&mo EXT &qt LSHIFT SPACE                &kp SPACE &sl SYM
 			>;
 		};
 
