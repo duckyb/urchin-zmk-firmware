@@ -51,6 +51,10 @@
 			#binding-cells = <0>;
 			bindings = <&kp LSHIFT &kp RSHIFT &kp LCTRL &kp RCTRL &kp LALT &kp RALT &kp LGUI &kp RGUI>;
 		};
+
+               MACRO_1: macro_1 { label = "ê"; bindings = <&kp E &kp MINUS>; }; 
+              MACRO_2: macro_2 { label = "ã"; bindings = <&kp A &kp BR_TILDE >; }; 
+              MACRO_3: macro_3 { label = "é"; bindings = <&kp E &kp EQL>; }; 
 	};
 
 	combos {
@@ -90,8 +94,8 @@
 			label = "Base";
 			bindings = <
 			&kp Q &kp W &kp E &kp R &kp T           &kp Y &kp U  &kp I     &kp O   &kp P 
-			&kp A &kp S &kp D &kp F &kp G           &kp H &kp J  &kp K     &kp L &kp BR_CCEDILA SEMI 
-			&kp Z &kp X &kp C &kp V &kp B           &kp N &kp M  &kp COMMA &kp DOT &kp BR_SEMI SLASH  
+			&kp A &kp S &kp D &kp F &kp G           &kp H &kp J  &kp K     &kp L &kp BR_CCEDILA  
+			&kp Z &kp X &kp C &kp V &kp B           &kp N &kp M  &kp COMMA &kp DOT &kp BR_SEMI
 			&mo EXT &qt LSHIFT SPACE                &kp SPACE &sl SYM
 			>;
 		};
@@ -103,7 +107,7 @@
 			&kp N1 &kp N2 &kp N3 &kp N4 &kp N5		                                    &kp N6 &kp N7 &kp N8 &kp N9 &kp N0
 			&kp IT_LESS &kp IT_USD &kp IT_LPAR &kp IT_LBRC &kp IT_LBKT  &kp IT_EQL &kp IT_QUES &kp IT_SQUOT &kp IT_MINUS &kp IT_AST
 			&kp IT_GREAT &kp IT_PERC &kp IT_RPAR &kp IT_RBRC &kp IT_RBKT 	&kp IT_AT &kp IT_EXCL &kp IT_DQUOT &kp IT_PLUS &kp IT_FSLH
-														&mo FNC  &mo SYM2       &BR_CCEDILA SEMI  &trans
+								&mo FNC  &mo SYM2       &trans &trans
 			>;
 		};
 
@@ -144,10 +148,10 @@
 		accent_layer {
 			label = "Accent";
 			bindings = <
-			&none &none &none &kp IT_CEGR &none                         &none &none &none &none &none 
-			&kp IT_AGRV &kp IT_IGRV &kp IT_OGRV &kp IT_EGRV &kp IT_EACU &none &none &none &none &none
-			&none &none &none &kp IT_UGRV &none                         &none &none &none &none &none
-									&none &none                         &none &none 
+			&none &none &macro_1 &kp none &none                      &none &none &none &none &none 
+			&macro_2 &none &macro_3 &none                                  &none  &none &none &none &none 
+			&none &none &none &&none   &none                         &none &none &none &none &none
+						&none &none                         &none &none 
 			>;
 		};
 
