@@ -133,7 +133,7 @@
 #define BR_NOT  RA(N7)            // ¬
 #define BR_SECT RA(N8)            // §
 #define BR_PILCROW RA(N9)         // ¶
-#define BR_BSLH RA(INT1)          // \
+#define BR_BSLH RA(INT1)          // \\
 #define BR_TILDE RA(EQUAL)        // ~
 #define BR_ACUTE RA(MINUS)        // ´
 #define BR_GRAVE RA(PLUS)         // `
