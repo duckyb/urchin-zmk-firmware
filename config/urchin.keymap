@@ -33,8 +33,7 @@
     ignore-modifiers;
 };
 
-&{
-    behaviors {
+&behaviors {
         // Enables holding the first mod-tap key
         // by performing a tap-release-hold sequence.
         // To use it: "&qt KEYCODE1 KEYCODE2"
