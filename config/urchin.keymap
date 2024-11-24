@@ -33,22 +33,22 @@
     ignore-modifiers;
 };
 
-/ {
-    behaviors {
-        // Enables holding the first mod-tap key
-        // by performing a tap-release-hold sequence.
-        // To use it: "&qt KEYCODE1 KEYCODE2"
+behaviors {
+    compatible = "zmk,behaviors";
 
-        qt: quick_tap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "QUICK_TAP";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
-            bindings = <&kp>, <&kp>;
-        };
+    // Enables holding the first mod-tap key
+    // by performing a tap-release-hold sequence.
+    // To use it: "&qt KEYCODE1 KEYCODE2"
+    qt: quick_tap {
+        compatible = "zmk,behavior-hold-tap";
+        label = "QUICK_TAP";
+        #binding-cells = <2>;
+        flavor = "hold-preferred";
+        tapping-term-ms = <200>;
+        quick-tap-ms = <200>;
+        bindings = <&kp>, <&kp>;
     };
+};
 
 macros {
     compatible = "zmk,macros";
@@ -178,4 +178,5 @@ keymap {
         >;
     };
 };
+
 
