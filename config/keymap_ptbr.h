@@ -88,7 +88,7 @@
  * └────┴────┴────┴────────────────────────┴────┴────┴────┴────┘
  */
 // Row 1
-#define BR_SLASH SLASH           // /
+#define BR_SLASH SLASH           /* / */
 #define BR_DQUOT LS(GRAVE)        // "
 #define BR_EXCL  LS(N1)           // !
 #define BR_AT    LS(N2)           // @
@@ -136,6 +136,7 @@
 #define BR_PILCROW RA(N9)         // ¶
 #define BR_BSLH RA(INT1)          /* \ */
 #define BR_TILDE RA(EQUAL)        // ~
+#define BR_CARET LS(EQUAL)        // ^
 #define BR_ACUTE RA(MINUS)        // ´
 #define BR_GRAVE RA(PLUS)         // `
 // Row 2
