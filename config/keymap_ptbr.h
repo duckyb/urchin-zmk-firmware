@@ -88,6 +88,7 @@
  * └────┴────┴────┴────────────────────────┴────┴────┴────┴────┘
  */
 // Row 1
+#define BR_SLASH SLASH           // /
 #define BR_DQUOT LS(GRAVE)        // "
 #define BR_EXCL  LS(N1)           // !
 #define BR_AT    LS(N2)           // @
