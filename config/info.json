@@ -2,8 +2,8 @@
   "id": "urchin",
   "name": "Urchin",
   "layouts": {
-    "default_transform": {
-      "name": "default_transform",
+    "urchin_left": {
+      "name": "urchin_left",
       "layout": [
         { "row": 0, "col":  1, "x":     1, "y": 0.375 },
         { "row": 0, "col":  2, "x":     2, "y": 0.125 },
@@ -44,8 +44,8 @@
         { "row": 3, "col":  8, "x": 10.52, "y": 3.125, "r": -15, "rx": 11.02, "ry": 7.895 }
       ]
     },
-    "five_column_transform": {
-      "name": "five_column_transform",
+    "urchin_right": {
+      "name": "urchin_right",
       "layout": [
         { "row": 0, "col":  1, "x":    0, "y": 0.375 },
         { "row": 0, "col":  2, "x":    1, "y": 0.125 },
