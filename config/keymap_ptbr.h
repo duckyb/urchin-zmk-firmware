@@ -134,7 +134,6 @@
 #define BR_NOT  RA(N7)            // ¬
 #define BR_SECT RA(N8)            // §
 #define BR_PILCROW RA(N9)         // ¶
-#define BR_BSLH RA(INT1)          /* \ */
 #define BR_TILDE RA(EQUAL)        // ~
 #define BR_CARET LS(EQUAL)        // ^
 #define BR_ACUTE RA(MINUS)        // ´
@@ -161,8 +160,6 @@
  * └────┴────┴────┴────────────────────────┴────┴────┴────┴────┘
  */
 // Row 2
-#define BR_LBRC RA(LBKT)         // [
-#define BR_RBRC RA(RBKT)         // ]
 
 /**
  * Personalized symbols.
@@ -170,4 +167,4 @@
  * Esses símbolos são para layouts personalizados.
 */
 #define BR_BKTK RA(MINUS)        // `
-#define BR_TILDE2 RA(EQUAL)      // ~
+
