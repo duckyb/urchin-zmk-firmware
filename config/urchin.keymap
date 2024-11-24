@@ -8,7 +8,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
-#include "keymap_ptbr.h"
+// #include "keymap_ptbr.h"
 
 // Layer definitions
 #define BASE 0
@@ -20,150 +20,157 @@
 #define SETTINGS 6
 // -----------------
 
-&sk {
-	// don't release mods on other mods presses
-	ignore-modifiers;
+/ {
+    chosen {
+        zmk,variant = &keymap_abnt2;
+    };
 };
 
+#include "keymap_abnt2.dtsi"
 
-/ {
-	behaviors {
-		// Enables holding the first mod-tap key
-		// by performing a tap-release-hold sequence.
-		// To use it: "&qt KEYCODE1 KEYCODE2"
-		qt: quick_tap {
-			compatible = "zmk,behavior-hold-tap";
-			label = "QUICK_TAP";
-			#binding-cells = <2>;
-			flavor = "hold-preferred";
-			tapping-term-ms = <200>;
-			quick-tap-ms = <200>;
-			bindings = <&kp>, <&kp>;
-		};
-	};
+&sk {
+    // don't release mods on other mods presses
+    ignore-modifiers;
+};
 
-	macros {
-		// sometimes my device thinks a modifier is being held down
-		// pressing all modifiers fixes it.
-		unstick: unstick {
-			label = "ZM_unstick";
-			compatible = "zmk,behavior-macro";
-			#binding-cells = <0>;
-			bindings = <&kp LSHIFT &kp RSHIFT &kp LCTRL &kp RCTRL &kp LALT &kp RALT &kp LGUI &kp RGUI>;
-		};
+&{
+    behaviors {
+        // Enables holding the first mod-tap key
+        // by performing a tap-release-hold sequence.
+        // To use it: "&qt KEYCODE1 KEYCODE2"
+        qt: quick_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "QUICK_TAP";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            bindings = <&kp>, <&kp>;
+        };
+    };
 
-               MACRO_1: macro_1 { label = "ê"; bindings = <&kp E &kp MINUS>; }; 
-              MACRO_2: macro_2 { label = "ã"; bindings = <&kp A &kp BR_TILDE >; }; 
-              MACRO_3: macro_3 { label = "é"; bindings = <&kp E &kp EQL>; }; 
-	};
+    macros {
+        // sometimes my device thinks a modifier is being held down
+        // pressing all modifiers fixes it.
+        unstick: unstick {
+            label = "ZM_unstick";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LSHIFT &kp RSHIFT &kp LCTRL &kp RCTRL &kp LALT &kp RALT &kp LGUI &kp RGUI>;
+        };
 
-	combos {
-		compatible = "zmk,combos";
-		// both right thumb keys
-		combo_accent {
-			timeout-ms = <200>;
-			key-positions = <32 33>;
-			bindings = <&mo ACCENT>;
-		};
-		// internal-left & external-right thumb keys
-		combo_sym2 {
-			timeout-ms = <200>;
-			key-positions = <31 33>;
-			bindings = <&mo SYM2>;
-		};
-		// both left thumb keys
-		combo_settings {
-			timeout-ms = <200>;
-			key-positions = <30 31>;
-			bindings = <&mo SETTINGS>;
-		};
-		// left index & middle fingers (home-row)
-		// hold control & space for Adobe workflow
-		combo_ctrl_space {
-			timeout-ms = <200>;
-			key-positions = <12 13>;
-			bindings = <&kp LC(SPACE)>;
-			layers = <BASE>;
-		};
-	};
+        MACRO_1: macro_1 { label = "ê"; bindings = <&kp E &kp MINUS>; }; 
+        MACRO_2: macro_2 { label = "ã"; bindings = <&kp A &kp BR_TILDE >; }; 
+        MACRO_3: macro_3 { label = "é"; bindings = <&kp E &kp EQL>; }; 
+    };
 
-	keymap {
-		compatible = "zmk,keymap";
-		// Base alpha layer
-		default_layer {
-			label = "Base";
-			bindings = <
-			&kp Q &kp W &kp E &kp R &kp T           &kp Y &kp U  &kp I     &kp O   &kp P 
-			&kp A &kp S &kp D &kp F &kp G           &kp H &kp J  &kp K     &kp L &kp BR_CCEDILA  
-			&kp Z &kp X &kp C &kp V &kp B           &kp N &kp M  &kp COMMA &kp DOT &kp BR_SEMI
-			&mo EXT &qt LSHIFT SPACE                &kp SPACE &sl SYM
-			>;
-		};
+    combos {
+        compatible = "zmk,combos";
+        // both right thumb keys
+        combo_accent {
+            timeout-ms = <200>;
+            key-positions = <32 33>;
+            bindings = <&mo ACCENT>;
+        };
+        // internal-left & external-right thumb keys
+        combo_sym2 {
+            timeout-ms = <200>;
+            key-positions = <31 33>;
+            bindings = <&mo SYM2>;
+        };
+        // both left thumb keys
+        combo_settings {
+            timeout-ms = <200>;
+            key-positions = <30 31>;
+            bindings = <&mo SETTINGS>;
+        };
+        // left index & middle fingers (home-row)
+        // hold control & space for Adobe workflow
+        combo_ctrl_space {
+            timeout-ms = <200>;
+            key-positions = <12 13>;
+            bindings = <&kp LC(SPACE)>;
+            layers = <BASE>;
+        };
+    };
 
-		// Numbers and high frequency symbols
-		sym_layer {
-			label = "Sym.";
-			bindings = <
-			&kp N1 &kp N2 &kp N3 &kp N4 &kp N5		                                    &kp N6 &kp N7 &kp N8 &kp N9 &kp N0
-			&kp BR_LT &kp BR_AT &kp BR_LPAR &kp BR_LCBR &kp BR_LBKT         &kp BR_EQUAL &kp BR_QUES &kp BR_QUOT &kp BR_PLUS  &kp BR_ASTR
-			&kp BR_GT &kp BR_PERC &kp BR_RPAR &kp BR_RCBR &kp BR_RBKT 	&kp BR_PERC &kp BR_EXCL &kp BR_DQUOT &kp BR_MINUS &kp BR_SLASH
-								&mo FNC  &mo SYM2       &trans &trans
-			>;
-		};
+    keymap {
+        compatible = "zmk,keymap";
+        // Base alpha layer
+        default_layer {
+            label = "Base";
+            bindings = <
+                &kp Q &kp W &kp E &kp R &kp T           &kp Y &kp U  &kp I     &kp O   &kp P 
+                &kp A &kp S &kp D &kp F &kp G           &kp H &kp J  &kp K     &kp L &kp BR_CCEDILA  
+                &kp Z &kp X &kp C &kp V &kp B           &kp N &kp M  &kp COMMA &kp DOT &kp BR_SEMI
+                &mo EXT &qt LSHIFT SPACE                &kp SPACE &sl SYM
+            >;
+        };
 
-		// Main modifiers and arrow keys
-		ext_layer {
-			label = "Mods";
-			bindings = <
-			&kp ESC  &kp C_PREV &kp C_PP  &kp C_NEXT  &kp C_PAUSE    	&kp PG_UP  &kp HOME &kp UP &kp END &kp CAPS
-			&sk LALT &sk LGUI  &sk LSHIFT  &sk LCTRL  &kp RALT 			&kp PG_DN &kp LEFT  &kp DOWN  &kp RIGHT   &kp DEL
-			&kp LC(Z)  &kp LC(X) &kp LC(C) &kp TAB   &kp LC(V)          &kp LC(BSPC) &kp BSPC &trans &trans  &trans
-																		&trans &kp LCTRL    &kp ENTER  &mo FNC 
-			>;
-		};
+        // Numbers and high frequency symbols
+        sym_layer {
+            label = "Sym.";
+            bindings = <
+                &kp N1 &kp N2 &kp N3 &kp N4 &kp N5                                      &kp N6 &kp N7 &kp N8 &kp N9 &kp N0
+                &kp BR_LT &kp BR_AT &kp BR_LPAR &kp BR_LCBR &kp BR_LBKT         &kp BR_EQUAL &kp BR_QUES &kp BR_QUOT &kp BR_PLUS  &kp BR_ASTR
+                &kp BR_GT &kp BR_PERC &kp BR_RPAR &kp BR_RCBR &kp BR_RBKT       &kp BR_PERC &kp BR_EXCL &kp BR_DQUOT &kp BR_MINUS &kp BR_SLASH
+                                                &mo FNC  &mo SYM2       &trans &trans
+            >;
+        };
 
-		// Function keys with modifiers
-		fnc_layer {
-			label = "FRow";
-			bindings = <
-			&kp F1 &kp F2 &kp F3 &kp F4 &kp F5                  &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 
-			&sk LALT &sk LGUI &sk LSHIFT &sk LCTRL &kp RALT     &kp F11 &kp F12  &kp PRINTSCREEN &trans &trans
-			&none &none &none &none &none				          &none &none &none &none &none 
-							  &none &none              &none &none  
-			>;
-		};
+        // Main modifiers and arrow keys
+        ext_layer {
+            label = "Mods";
+            bindings = <
+                &kp ESC  &kp C_PREV &kp C_PP  &kp C_NEXT  &kp C_PAUSE        &kp PG_UP  &kp HOME &kp UP &kp END &kp CAPS
+                &sk LALT &sk LGUI  &sk LSHIFT  &sk LCTRL  &kp RALT                  &kp PG_DN &kp LEFT  &kp DOWN  &kp RIGHT   &kp DEL
+                &kp LC(Z)  &kp LC(X) &kp LC(C) &kp TAB   &kp LC(V)           &kp LC(BSPC) &kp BSPC &trans &trans  &trans
+                                                                &trans &kp LCTRL    &kp ENTER  &mo FNC 
+            >;
+        };
 
-		// Low frequency symbols.
-		symbols_2_layer {
-			label = "Sym.2";
-			bindings = <
-			&kp BR_CARET &kp BR_UNDER &kp BR_SECT &kp BR_EUR &kp BR_HASH        &none &none &none &none &none 
-			&kp BR_GRAVE &kp BR_TILDE &kp BR_BSLH &kp BR_PIPE &kp BR_AND         &none &none &none &none &none
-			&BR_UMLT  &none  &none &kp BR_FEM_ORD &kp BR_DEG		     &none &none &none &none &none
-				&none &none        	                                    &none &none 
-			>;
-		};
+        // Function keys with modifiers
+        fnc_layer {
+            label = "FRow";
+            bindings = <
+                &kp F1 &kp F2 &kp F3 &kp F4 &kp F5                  &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 
+                &sk LALT &sk LGUI &sk LSHIFT &sk LCTRL &kp RALT     &kp F11 &kp F12  &kp PRINTSCREEN &trans &trans
+                &none &none &none &none &none                              &none &none &none &none &none 
+                                &none &none              &none &none  
+            >;
+        };
 
-		// Used to type regional accents.
-		accent_layer {
-			label = "Accent";
-			bindings = <
-			&none &none &macro_1 &kp none &none                      &none &none &none &none &none 
-			&macro_2 &none &macro_3 &none                                  &none  &none &none &none &none 
-			&none &none &none &&none   &none                         &none &none &none &none &none
-						&none &none                         &none &none 
-			>;
-		};
+        // Low frequency symbols.
+        symbols_2_layer {
+            label = "Sym.2";
+            bindings = <
+                &kp BR_CARET &kp BR_UNDER &kp BR_SECT &kp BR_EUR &kp BR_HASH        &none &none &none &none &none 
+                &kp BR_GRAVE &kp BR_TILDE &kp BR_BSLH &kp BR_PIPE &kp BR_AND         &none &none &none &none &none
+                &BR_UMLT  &none  &none &kp BR_FEM_ORD &kp BR_DEG            &none &none &none &none &none
+                    &none &none                                                &none &none 
+            >;
+        };
 
-		// Used to change the keyboard's settings.
-		settings_layer {
-				label = "Sett.";
-				bindings = <
-				&bootloader &none &none &bt BT_CLR &bt BT_SEL 0               &bt BT_SEL 3 &none &unstick &none &bootloader 
-				&none &none &none &none      &bt BT_SEL 1 						  &bt BT_SEL 4 &none &none &none &none
-				&none &none &none &none      &bt BT_SEL 2               &bt BT_SEL 5 &none &none &none &none
-										&none &none                         &none &none 
-				>;
-		};
-	};
+        // Used to type regional accents.
+        accent_layer {
+            label = "Accent";
+            bindings = <
+                &none &none &macro_1 &kp none &none                      &none &none &none &none &none 
+                &macro_2 &none &macro_3 &none                            &none  &none &none &none &none 
+                &none &none &none &none &none                            &none &none &none &none &none
+                            &none &none                                &none &none 
+            >;
+        };
+
+        // Used to change the keyboard's settings.
+        settings_layer {
+            label = "Sett.";
+            bindings = <
+                &bootloader &none &none &bt BT_CLR &bt BT_SEL 0            &bt BT_SEL 3 &none &unstick &none &bootloader 
+                &none &none &none &none      &bt BT_SEL 1                    &bt BT_SEL 4 &none &none &none &none
+                &none &none &none &none      &bt BT_SEL 2                    &bt BT_SEL 5 &none &none &none &none
+                                    &none &none                        &none &none 
+            >;
+        };
+    };
 };
