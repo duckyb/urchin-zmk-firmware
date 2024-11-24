@@ -32,7 +32,7 @@
     ignore-modifiers;
 };
 
-&{
+/ {
     behaviors: behaviors {
         compatible = "zmk,behaviors";
 
