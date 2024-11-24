@@ -135,17 +135,14 @@
 #define BR_NOT  RA(N7)            // ¬
 #define BR_SECT RA(N8)            // §
 #define BR_PILCROW RA(N9)         // ¶
-#define BR_TILDE RA(EQUAL)        // ~
 #define BR_CARET LS(EQUAL)        // ^
 #define BR_ACUTE RA(MINUS)        // ´
 #define BR_GRAVE RA(PLUS)         // `
 // Row 2
 #define BR_EUR RA(E)              // €
-#define BR_LCBR RA(LBKT)          // {
 // Row 3
-#define BR_AT RA(SEMI)            // @
-#define BR_HASH RA(APOS)          // #
-#define BR_PIPE RA(BSLS)          // |
+
+
 
 /* Shift+AltGr symbols
  * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───────┐
@@ -170,5 +167,4 @@
  * Esses símbolos são para layouts personalizados.
  */
 #define BR_BKTK RA(MINUS)        // `
-#define BR_TILDE2 RA(EQUAL)      // ~
 #define BR_CEGR RA(LS(E))        // È
