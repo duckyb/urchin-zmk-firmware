@@ -139,7 +139,7 @@
 			bindings = <
 			&kp BR_CARET &kp BR_UNDER &kp BR_SECT &kp BR_EUR &kp BR_HASH        &none &none &none &none &none 
 			&kp BR_GRAVE &kp BR_TILDE &kp BR_BSLH &kp BR_PIPE &kp BR_AND         &none &none &none &none &none
-			&BR_UMLT  &none  &kp IT_SECT &kp BR_FEM_ORD &kp BR_DEG		     &none &none &none &none &none
+			&BR_UMLT  &none  &none &kp BR_FEM_ORD &kp BR_DEG		     &none &none &none &none &none
 				&none &none        	                                    &none &none 
 			>;
 		};
