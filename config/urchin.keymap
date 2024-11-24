@@ -33,9 +33,7 @@
     ignore-modifiers;
 };
 
-behaviors {
-    compatible = "zmk,behaviors";
-
+&behaviors {
     // Enables holding the first mod-tap key
     // by performing a tap-release-hold sequence.
     // To use it: "&qt KEYCODE1 KEYCODE2"
@@ -50,9 +48,7 @@ behaviors {
     };
 };
 
-macros {
-    compatible = "zmk,macros";
-
+&macros {
     // sometimes my device thinks a modifier is being held down
     // pressing all modifiers fixes it.
     unstick: unstick {
@@ -67,7 +63,7 @@ macros {
     MACRO_3: macro_3 { label = "é"; bindings = <&kp E &kp EQL>; }; 
 };
 
-combos {
+&combos {
     compatible = "zmk,combos";
 
     // both right thumb keys
@@ -98,7 +94,7 @@ combos {
     };
 };
 
-keymap {
+&keymap {
     compatible = "zmk,keymap";
 
     // Base alpha layer
@@ -144,6 +140,8 @@ keymap {
                             &none &none              &none &none  
         >;
     };
+
+
 
     // Low frequency symbols.
     symbols_2_layer {
