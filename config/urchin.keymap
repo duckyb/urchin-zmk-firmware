@@ -105,8 +105,8 @@
 			label = "Sym.";
 			bindings = <
 			&kp N1 &kp N2 &kp N3 &kp N4 &kp N5		                                    &kp N6 &kp N7 &kp N8 &kp N9 &kp N0
-			&kp IT_LESS &kp IT_USD &kp IT_LPAR &kp IT_LBRC &kp IT_LBKT  &kp IT_EQL &kp IT_QUES &kp IT_SQUOT &kp IT_MINUS &kp IT_AST
-			&kp IT_GREAT &kp IT_PERC &kp IT_RPAR &kp IT_RBRC &kp IT_RBKT 	&kp IT_AT &kp IT_EXCL &kp IT_DQUOT &kp IT_PLUS &kp IT_FSLH
+			&kp BR_LT &kp BR_AT &kp BR_LPAR &kp BR_LCBR &kp BR_LBKT         &kp BR_EQUAL &kp BR_QUES &kp BR_QUOT &kp BR_PLUS  &kp BR_ASTR
+			&kp BR_GT &kp BR_PERC &kp BR_RPAR &kp BR_RCBR &kp BR_RBKT 	&kp BR_PERC &kp BR_EXCL &kp BR_DQUOT &kp BR_MINUS &kp BR_SLASH
 								&mo FNC  &mo SYM2       &trans &trans
 			>;
 		};
@@ -137,10 +137,10 @@
 		symbols_2_layer {
 			label = "Sym.2";
 			bindings = <
-			&kp IT_CARET &kp IT_UNDER &kp IT_PND &kp IT_EUR &kp IT_HASH         &none &none &none &none &none 
-			&kp IT_BKTK &kp IT_TILDE &kp IT_BSLH &kp IT_PIPE &kp IT_AND         &none &none &none &none &none
-			&none 			&none 			 &kp IT_SECT &kp IT_CCED &kp IT_DEG				  &none &none &none &none &none
-																	&none &none        	&none &none 
+			&kp BR_CARET &kp BR_UNDER &kp BR_SECT &kp BR_EUR &kp BR_HASH        &none &none &none &none &none 
+			&kp BR_GRAVE &kp BR_TILDE &kp BR_BSLH &kp BR_PIPE &kp BR_AND         &none &none &none &none &none
+			&BR_UMLT  &none  &kp IT_SECT &kp BR_FEM_ORD &kp BR_DEG		     &none &none &none &none &none
+				&none &none        	                                    &none &none 
 			>;
 		};
 
