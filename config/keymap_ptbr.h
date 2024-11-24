@@ -12,20 +12,7 @@
  * └────┴────┴────┴──────────────────────────────────┴────┴────┴────┘
  */
 
-#ifndef KEYMAP_PTBR_H
-#define KEYMAP_PTBR_H
 
-// Definições únicas das teclas
-#define BR_TILDE RA(EQUAL)        // ~
-#define BR_ACUTE RA(MINUS)        // ´
-#define BR_GRAVE RA(PLUS)         // ` 
-#define BR_LCBR LS(LBKT)          // {
-#define BR_RCBR LS(RBKT)          // }
-#define BR_AT LS(N2)              // @
-#define BR_HASH LS(N3)            // #
-#define BR_PIPE LS(INT1)          // |
-
-#endif // KEYMAP_PTBR_H
 
 
 
@@ -186,3 +173,17 @@
 */
 #define BR_BKTK RA(MINUS)        // `
 
+#ifndef KEYMAP_PTBR_H
+#define KEYMAP_PTBR_H
+
+// Definições únicas das teclas
+#define BR_TILDE RA(EQUAL)        // ~
+#define BR_ACUTE RA(MINUS)        // ´
+#define BR_GRAVE RA(PLUS)         // ` 
+#define BR_LCBR LS(LBKT)          // {
+#define BR_RCBR LS(RBKT)          // }
+#define BR_AT LS(N2)              // @
+#define BR_HASH LS(N3)            // #
+#define BR_PIPE LS(INT1)          // |
+
+#endif // KEYMAP_PTBR_H
