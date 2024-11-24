@@ -60,7 +60,7 @@
         };
 
         MACRO_1: macro_1 { label = "ê"; bindings = <&kp E &kp MINUS>; }; 
-        MACRO_2: macro_2 { label = "ã"; bindings = <&kp A &kp BR_TILDE >; }; 
+        MACRO_2: macro_2 { label = "ã"; bindings = <&kp A &kp BR_TILDE>; }; 
         MACRO_3: macro_3 { label = "é"; bindings = <&kp E &kp EQL>; }; 
     };
 
