@@ -35,6 +35,7 @@
 
 behaviors {
     compatible = "zmk,behaviors";
+
     // Enables holding the first mod-tap key
     // by performing a tap-release-hold sequence.
     // To use it: "&qt KEYCODE1 KEYCODE2"
@@ -51,6 +52,7 @@ behaviors {
 
 macros {
     compatible = "zmk,macros";
+
     // sometimes my device thinks a modifier is being held down
     // pressing all modifiers fixes it.
     unstick: unstick {
@@ -67,6 +69,7 @@ macros {
 
 combos {
     compatible = "zmk,combos";
+
     // both right thumb keys
     combo_accent {
         timeout-ms = <200>;
@@ -97,6 +100,7 @@ combos {
 
 keymap {
     compatible = "zmk,keymap";
+
     // Base alpha layer
     default_layer {
         label = "Base";
