@@ -1,170 +1,114 @@
-/*
- * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───────┐
- * │ ' │ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │ 7 │ 8 │ 9 │ 0 │ - │ = │       │
- * ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─────┤
- * │ Tab │ Q │ W │ E │ R │ T │ Y │ U │ I │ O │ P │ ` │ [ │     │
- * ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┐    │
- * │ Caps │ A │ S │ D │ F │ G │ H │ J │ K │ L │ Ç │ ~ │ ] │    │
- * ├────┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴───┴────┤
- * │Shift│ \ │ Z │ X │ C │ V │ B │ N │ M │ , │ . │ ; │Shift     │
- * ├────┼───┴┬──┴─┬─┴───┴───┴───┴───┴───┴───┴───┴───┴───┬────┬────┤
- * │Ctrl│Win │Alt │            Space                │Alt │Menu│Ctrl│
- * └────┴────┴────┴──────────────────────────────────┴────┴────┴────┘
- */
+// Copyright 2024 QMK
+// SPDX-License-Identifier: GPL-2.0-or-later
 
-#define BR_QUOT GRAVE            // '
-#define BR_1    N1               // 1
-#define BR_2    N2               // 2
-#define BR_3    N3               // 3
-#define BR_4    N4               // 4
-#define BR_5    N5               // 5
-#define BR_6    N6               // 6
-#define BR_7    N7               // 7
-#define BR_8    N8               // 8
-#define BR_9    N9               // 9
-#define BR_0    N0               // 0
-#define BR_MINUS MINUS           // -
-#define BR_EQUAL EQUAL           // =
-// Row 2
-#define BR_TAB  TAB              // Tab
-#define BR_Q    Q                // Q
-#define BR_W    W                // W
-#define BR_E    E                // E
-#define BR_R    R                // R
-#define BR_T    T                // T
-#define BR_Y    Y                // Y
-#define BR_U    U                // U
-#define BR_I    I                // I
-#define BR_O    O                // O
-#define BR_P    P                // P
-#define BR_ACCENT LBKT           // `
-#define BR_LBKT RBKT             // [
-// Row 3
-#define BR_CAPS CAPS             // Caps Lock
-#define BR_A    A                // A
-#define BR_S    S                // S
-#define BR_D    D                // D
-#define BR_F    F                // F
-#define BR_G    G                // G
-#define BR_H    H                // H
-#define BR_J    J                // J
-#define BR_K    K                // K
-#define BR_L    L                // L
-#define BR_CCEDILA SEMI          // Ç
-#define BR_TILDE APOS            // ~
-#define BR_RBKT BSLS             // ]
-// Row 4
-#define BR_LSFT LSFT             // Shift
-#define BR_BSLH INT1             // \
-#define BR_Z    Z                // Z
-#define BR_X    X                // X
-#define BR_C    C                // C
-#define BR_V    V                // V
-#define BR_B    B                // B
-#define BR_N    N                // N
-#define BR_M    M                // M
-#define BR_COMMA COMMA           // ,
-#define BR_DOT  DOT              // .
-#define BR_SEMI SLASH            // ;
-// Row 5
-#define BR_LCTL LCTL             // Ctrl
-#define BR_LGUI LGUI             // Win (Left GUI)
-#define BR_LALT LALT             // Alt (Left)
-#define BR_SPACE SPC             // Space
-#define BR_RALT RALT             // Alt (Right)
-#define BR_MENU MENU             // Menu
-#define BR_RCTL RCTL             // Ctrl (Right)
+/*******************************************************************************
+  88888888888 888      d8b                .d888 d8b 888               d8b
+      888     888      Y8P               d88P"  Y8P 888               Y8P
+      888     888                        888        888
+      888     88888b.  888 .d8888b       888888 888 888  .d88b.       888 .d8888b
+      888     888 "88b 888 88K           888    888 888 d8P  Y8b      888 88K
+      888     888  888 888 "Y8888b.      888    888 888 88888888      888 "Y8888b.
+      888     888  888 888      X88      888    888 888 Y8b.          888      X88
+      888     888  888 888  88888P'      888    888 888  "Y8888       888  88888P'
+                                                        888                 888
+                                                        888                 888
+                                                        888                 888
+     .d88b.   .d88b.  88888b.   .d88b.  888d888 8888b.  888888 .d88b.   .d88888
+    d88P"88b d8P  Y8b 888 "88b d8P  Y8b 888P"      "88b 888   d8P  Y8b d88" 888
+    888  888 88888888 888  888 88888888 888    .d888888 888   88888888 888  888
+    Y88b 888 Y8b.     888  888 Y8b.     888    888  888 Y88b. Y8b.     Y88b 888
+     "Y88888  "Y8888  888  888  "Y8888  888    "Y888888  "Y888 "Y8888   "Y88888
+         888
+    Y8b d88P
+     "Y88P"
+*******************************************************************************/
 
-/* Shifted symbols
- * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───────┐
- * │ " │ ! │ @ │ # │ $ │ % │ ¨ │ & │ * │ ( │ ) │ _ │ + │       │
- * ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─────┤
- * │     │   │   │   │   │   │   │   │   │   │   │ { │ } │     │
- * ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┐    │
- * │      │   │   │   │   │   │   │   │   │   │   │   │    │    │
- * ├────┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴───┴────┤
- * │    │ | │   │   │   │   │   │   │   │ < │ > │ ? │          │
- * ├────┼───┴┬──┴─┬─┴───┴───┴───┴───┴───┴───┬┴───┼───┴┬────┬────┤
- * │    │    │    │                        │    │    │    │    │
- * └────┴────┴────┴────────────────────────┴────┴────┴────┴────┘
- */
-// Row 1
-#define BR_SLASH SLASH           /* / */
-#define BR_DQUOT LS(GRAVE)        // "
-#define BR_EXCL  LS(N1)           // !
-#define BR_AT    LS(N2)           // @
-#define BR_HASH  LS(N3)           // #
-#define BR_USD   LS(N4)           // $
-#define BR_PERC  LS(N5)           // %
-#define BR_UMLT  LS(N6)           // ¨
-#define BR_AND   LS(N7)           // &
-#define BR_ASTR  LS(N8)           // *
-#define BR_LPAR  LS(N9)           // (
-#define BR_RPAR  LS(N0)           // )
-#define BR_UNDER LS(MINUS)        // _
-#define BR_PLUS  LS(EQUAL)        // +
-// Row 2
-#define BR_LCBR  LS(LBKT)         // {
-#define BR_RCBR  LS(RBKT)         // }
-// Row 4
-#define BR_PIPE  LS(INT1)         // |
-#define BR_LT    LS(COMMA)        // <
-#define BR_GT    LS(DOT)          // >
-#define BR_QUES  LS(SLASH)        // ?
+#pragma once
+#include "keycodes.h"
+// clang-format off
 
-/* AltGr symbols
- * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───────┐
- * │ ª │ ¹ │ ² │ ³ │ ¢ │ ° │ ¬ │ § │ ¶ │ \ │ ~ │ ´ │ ` │       │
- * ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─────┤
- * │     │   │   │ € │   │   │   │   │   │   │   │   │ { │     │
- * ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┐    │
- * │      │   │   │   │   │   │   │   │   │   │ @ │ # │ | │    │
- * ├────┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴───┴────┤
- * │    │ | │   │   │   │   │   │   │   │   │   │   │          │
- * ├────┼───┴┬──┴─┬─┴───┴───┴───┴───┴───┴───┴───┬┴───┼───┴┬────┬────┤
- * │    │    │    │                        │    │    │    │    │
- * └────┴────┴────┴────────────────────────┴────┴────┴────┴────┘
- */
-// Row 1
-#define BR_FEM_ORD RA(N1)         // ª
-#define BR_SUP1 RA(N2)            // ¹
-#define BR_SUP2 RA(N3)            // ²
-#define BR_SUP3 RA(N4)            // ³
-#define BR_CENT RA(N5)            // ¢
-#define BR_DEG RA(N6)             // °
-#define BR_NOT  RA(N7)            // ¬
-#define BR_SECT RA(N8)            // §
-#define BR_PILCROW RA(N9)         // ¶
-#define BR_CARET LS(EQUAL)        // ^
-#define BR_ACUTE RA(MINUS)        // ´
-#define BR_GRAVE RA(PLUS)         // `
-// Row 2
-#define BR_EUR RA(E)              // €
-// Row 3
-
-
-
-/* Shift+AltGr symbols
- * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───────┐
- * │ ª │ ¹ │ ² │ ³ │ ¢ │ ° │ ¬ │ § │ ¶ │ \ │ ~ │ ´ │ ` │       │
- * ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─────┤
- * │     │   │   │ € │   │   │   │   │   │   │   │   │ [ │     │
- * ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┐    │
- * │      │   │   │   │   │   │   │   │   │   │   │   │   │    │
- * ├────┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴───┴────┤
- * │    │ | │   │   │   │   │   │   │   │ < │ > │ ? │          │
- * ├────┼───┴┬──┴─┬─┴───┴───┴───┴───┴───┴───┴───┬┴───┼───┴┬────┬────┤
- * │    │    │    │                        │    │    │    │    │
- * └────┴────┴────┴────────────────────────┴────┴────┴────┴────┘
- */
-// Row 2
-#define BR_LBRC RA(LBKT)         // [
-#define BR_RBRC RA(RBKT)         // ]
-
-/**
- * Personalized symbols.
- * 
- * Esses símbolos são para layouts personalizados.
- */
-#define BR_BKTK RA(MINUS)        // `
-#define BR_CEGR RA(LS(E))        // È
+// Aliases
+#define BR_QUOT KC_GRV  // '
+#define BR_1    KC_1    // 1
+#define BR_2    KC_2    // 2
+#define BR_3    KC_3    // 3
+#define BR_4    KC_4    // 4
+#define BR_5    KC_5    // 5
+#define BR_6    KC_6    // 6
+#define BR_7    KC_7    // 7
+#define BR_8    KC_8    // 8
+#define BR_9    KC_9    // 9
+#define BR_0    KC_0    // 0
+#define BR_MINS KC_MINS // -
+#define BR_EQL  KC_EQL  // =
+#define BR_Q    KC_Q    // Q
+#define BR_W    KC_W    // W
+#define BR_E    KC_E    // E
+#define BR_R    KC_R    // R
+#define BR_T    KC_T    // T
+#define BR_Y    KC_Y    // Y
+#define BR_U    KC_U    // U
+#define BR_I    KC_I    // I
+#define BR_O    KC_O    // O
+#define BR_P    KC_P    // P
+#define BR_ACUT KC_LBRC // ´ (dead)
+#define BR_LBRC KC_RBRC // [
+#define BR_A    KC_A    // A
+#define BR_S    KC_S    // S
+#define BR_D    KC_D    // D
+#define BR_F    KC_F    // F
+#define BR_G    KC_G    // G
+#define BR_H    KC_H    // H
+#define BR_J    KC_J    // J
+#define BR_K    KC_K    // K
+#define BR_L    KC_L    // L
+#define BR_CCED KC_SCLN // Ç
+#define BR_TILD KC_QUOT // ~ (dead)
+#define BR_RBRC KC_BSLS // ]
+#define BR_BSLS KC_NUBS // (backslash)
+#define BR_Z    KC_Z    // Z
+#define BR_X    KC_X    // X
+#define BR_C    KC_C    // C
+#define BR_V    KC_V    // V
+#define BR_B    KC_B    // B
+#define BR_N    KC_N    // N
+#define BR_M    KC_M    // M
+#define BR_COMM KC_COMM // ,
+#define BR_DOT  KC_DOT  // .
+#define BR_SCLN KC_SLSH // ;
+#define BR_SLSH KC_INT1 // /
+#define BR_PDOT KC_PCMM // .
+#define BR_PCMM KC_PDOT // ,
+#define BR_DQUO S(BR_QUOT) // "
+#define BR_EXLM S(BR_1)    // !
+#define BR_AT   S(BR_2)    // @
+#define BR_HASH S(BR_3)    // #
+#define BR_DLR  S(BR_4)    // $
+#define BR_PERC S(BR_5)    // %
+#define BR_DIAE S(BR_6)    // ¨ (dead)
+#define BR_AMPR S(BR_7)    // &
+#define BR_ASTR S(BR_8)    // *
+#define BR_LPRN S(BR_9)    // (
+#define BR_RPRN S(BR_0)    // )
+#define BR_UNDS S(BR_MINS) // _
+#define BR_PLUS S(BR_EQL)  // +
+#define BR_GRV  S(BR_ACUT) // ` (dead)
+#define BR_LCBR S(BR_LBRC) // {
+#define BR_CIRC S(BR_TILD) // ^ (dead)
+#define BR_RCBR S(BR_RBRC) // }
+#define BR_PIPE S(BR_BSLS) // |
+#define BR_LABK S(BR_COMM) // <
+#define BR_RABK S(BR_DOT)  // >
+#define BR_COLN S(BR_SCLN) // :
+#define BR_QUES S(BR_SLSH) // ?
+#define BR_SUP1 ALGR(BR_1)    // ¹
+#define BR_SUP2 ALGR(BR_2)    // ²
+#define BR_SUP3 ALGR(BR_3)    // ³
+#define BR_PND  ALGR(BR_4)    // £
+#define BR_CENT ALGR(BR_5)    // ¢
+#define BR_NOT  ALGR(BR_6)    // ¬
+#define BR_SECT ALGR(BR_EQL)  // §
+#define BR_DEG  ALGR(BR_E)    // °
+#define BR_FORD ALGR(BR_LBRC) // ª
+#define BR_MORD ALGR(BR_RBRC) // º
+#define BR_CRUZ ALGR(BR_C)    // ₢
