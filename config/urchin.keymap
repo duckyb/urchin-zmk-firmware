@@ -52,7 +52,7 @@
         };
 
         MACRO_1: macro_1 { label = "ê"; bindings = <&kp E &kp MINUS>; }; 
-        MACRO_2: macro_2 { label = "ã"; bindings = <&kp A &kp BR_TILDE>; }; 
+        MACRO_2: macro_2 { label = "ã"; bindings = <&kp A &kp BR_TILD>; }; 
         MACRO_3: macro_3 { label = "é"; bindings = <&kp E &kp EQL>; }; 
     };
 
@@ -94,8 +94,8 @@
             label = "Base";
             bindings = <
                 &kp Q &kp W &kp E &kp R &kp T           &kp Y &kp U  &kp I     &kp O   &kp P 
-                &kp A &kp S &kp D &kp F &kp G           &kp H &kp J  &kp K     &kp L &kp BR_CCEDILA  
-                &kp Z &kp X &kp C &kp V &kp B           &kp N &kp M  &kp COMMA &kp DOT &kp BR_SEMI
+                &kp A &kp S &kp D &kp F &kp G           &kp H &kp J  &kp K     &kp L &kp BR_CCED  
+                &kp Z &kp X &kp C &kp V &kp B           &kp N &kp M  &kp COMMA &kp DOT &kp BR_SCLN
                 &mo EXT &qt LSHIFT SPACE                &kp SPACE &sl SYM
             >;
         };
@@ -105,8 +105,8 @@
             label = "Sym.";
             bindings = <
                 &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0
-                &kp BR_LT &kp BR_AT &kp BR_LPAR &kp BR_LCBR &kp BR_LBKT &kp BR_EQUAL &kp BR_QUES &kp BR_QUOT &kp BR_PLUS &kp BR_ASTR
-               &kp BR_GT &kp BR_PERC &kp BR_RPAR &kp BR_RCBR &kp BR_RBKT &kp BR_PERC &kp BR_EXCL &kp BR_DQUOT &kp BR_MINUS &kp BR_SLASH
+                &kp BR_LABK &kp BR_AT &kp BR_LPAR &kp BR_LCBR &kp BR_LBKT &kp BR_EQUAL &kp BR_QUES &kp BR_QUOT &kp BR_PLUS &kp BR_ASTR
+               &kp BR_RABK &kp BR_DLR &kp BR_RPAR &kp BR_RCBR &kp BR_RBKT &kp BR_PERC &kp BR_EXCL &kp BR_DQUOT &kp BR_MINUS &kp BR_SLASH
                 &mo FNC &mo SYM2 &trans &trans
             >;
         };
