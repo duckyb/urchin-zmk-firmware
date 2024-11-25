@@ -98,15 +98,17 @@
     };
 
     // Numbers and high frequency symbols
-  sym_layer {
+
+sym_layer {
     label = "Sym.";
     bindings = <
         &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0
         &kp BR_LT &kp BR_AT &kp BR_LPAR &kp BR_LCBR &kp BR_LBKT &kp BR_EQUAL &kp BR_QUES &kp BR_QUOT &kp BR_PLUS &kp BR_ASTR
         &kp BR_GT &kp BR_PERC &kp BR_RPAR &kp BR_RCBR &kp BR_RBKT &kp BR_PERC &kp BR_EXCL &kp BR_DQUOT &kp BR_MINUS &kp BR_SLASH
-        &mo FNC &mo SYM2 &trans &trans
+        &mo FNC &mo SYM.2 &trans &trans
     >;
 };
+
 
 
     // Main modifiers and arrow keys
