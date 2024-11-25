@@ -24,7 +24,7 @@
 *******************************************************************************/
 
 #pragma once
-//#include "keycodes.h"
+#include "keymap_brazilian_abnt2.h"
 // clang-format off
 
 // Aliases
