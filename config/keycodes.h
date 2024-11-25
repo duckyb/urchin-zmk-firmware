@@ -23,9 +23,7 @@
      "Y88P"
 *******************************************************************************/
 
-#pragma once
-#include "keycodes.h"
-// clang-format off
+
 
 // Aliases
 #define KC_TILD S(KC_GRAVE) // ~
