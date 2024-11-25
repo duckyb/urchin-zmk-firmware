@@ -23,7 +23,7 @@
     chosen {
         zmk,variant = &keymap_abnt2;
     };
-};
+
 
 #include "keymap_abnt2.dtsi"
 
@@ -32,7 +32,7 @@
     ignore-modifiers;
 };
 
-/ {
+
 behaviors {
     compatible = "zmk,behaviors";
 
@@ -48,7 +48,7 @@ behaviors {
         quick-tap-ms = <200>;
         bindings = <&kp>, <&kp>;
     };
-};
+
 
 
 macros {
@@ -178,4 +178,5 @@ keymap {
                                 &none &none                        &none &none 
         >;
     };
+};
 };
