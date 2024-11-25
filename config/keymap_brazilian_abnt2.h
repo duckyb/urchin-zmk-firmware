@@ -120,3 +120,56 @@
 #define IT_BKTK RA(MINUS)        // `
 #define IT_TILDE RA(EQUAL)       // ~
 #define IT_CEGR RA(LS(E))        // È
+
+
+
+
+#define BR_QUOT KC_GRV  // '
+#define BR_MINS KC_MINS // -
+#define BR_EQL  KC_EQL  // =
+#define BR_ACUT KC_LBRC // ´ (dead)
+#define BR_LBRC KC_RBRC // [
+#define BR_CCED KC_SCLN // Ç
+#define BR_TILD KC_QUOT // ~ (dead)
+#define BR_RBRC KC_BSLS // ]
+#define BR_BSLS KC_NUBS // (backslash)
+#define BR_COMM KC_COMM // ,
+#define BR_DOT  KC_DOT  // .
+#define BR_SCLN KC_SLSH // ;
+#define BR_SLSH KC_INT1 // /
+#define BR_PDOT KC_PCMM // .
+#define BR_PCMM KC_PDOT // ,
+#define BR_DQUO S(BR_QUOT) // "
+#define BR_EXLM S(BR_1)    // !
+#define BR_AT   S(BR_2)    // @
+#define BR_HASH S(BR_3)    // #
+#define BR_DLR  S(BR_4)    // $
+#define BR_PERC S(BR_5)    // %
+#define BR_DIAE S(BR_6)    // ¨ (dead)
+#define BR_AMPR S(BR_7)    // &
+#define BR_ASTR S(BR_8)    // *
+#define BR_LPRN S(BR_9)    // (
+#define BR_RPRN S(BR_0)    // )
+#define BR_UNDS S(BR_MINS) // _
+#define BR_PLUS S(BR_EQL)  // +
+#define BR_GRV  S(BR_ACUT) // ` (dead)
+#define BR_LCBR S(BR_LBRC) // {
+#define BR_CIRC S(BR_TILD) // ^ (dead)
+#define BR_RCBR S(BR_RBRC) // }
+#define BR_PIPE S(BR_BSLS) // |
+#define BR_LABK S(BR_COMM) // <
+#define BR_RABK S(BR_DOT)  // >
+#define BR_COLN S(BR_SCLN) // :
+#define BR_QUES S(BR_SLSH) // ?
+#define BR_SUP1 ALGR(BR_1)    // ¹
+#define BR_SUP2 ALGR(BR_2)    // ²
+#define BR_SUP3 ALGR(BR_3)    // ³
+#define BR_PND  ALGR(BR_4)    // £
+#define BR_CENT ALGR(BR_5)    // ¢
+#define BR_NOT  ALGR(BR_6)    // ¬
+#define BR_SECT ALGR(BR_EQL)  // §
+#define BR_DEG  ALGR(BR_E)    // °
+#define BR_FORD ALGR(BR_LBRC) // ª
+#define BR_MORD ALGR(BR_RBRC) // º
+#define BR_CRUZ ALGR(BR_C)    // ₢
+
