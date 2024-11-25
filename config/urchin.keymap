@@ -32,6 +32,7 @@
     ignore-modifiers;
 };
 
+/ {
 behaviors {
     compatible = "zmk,behaviors";
 
@@ -48,6 +49,7 @@ behaviors {
         bindings = <&kp>, <&kp>;
     };
 };
+
 
 macros {
     compatible = "zmk,macros";
