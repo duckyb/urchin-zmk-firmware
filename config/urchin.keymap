@@ -101,8 +101,8 @@
 			label = "Sym.";
 			bindings = <
 			&kp N1 &kp N2 &kp N3 &kp N4 &kp N5		                                    &kp N6 &kp N7 &kp N8 &kp N9 &kp N0
-			&kp IT_LESS &kp IT_USD &kp IT_LPAR &kp IT_LBRC &kp IT_LBKT  &kp IT_EQL &kp IT_QUES &kp IT_SQUOT &kp IT_MINUS &kp IT_AST
-			&kp IT_GREAT &kp IT_PERC &kp IT_RPAR &kp IT_RBRC &kp IT_RBKT 	&kp IT_AT &kp IT_EXCL &kp IT_DQUOT &kp IT_PLUS &kp IT_FSLH
+			&kp IT_LESS &kp  IT_AT &kp IT_LPAR &kp IT_LBRC &kp IT_LBKT  &kp IT_EQL &kp IT_QUES &kp IT_SQUOT &kp IT_PLUS &kp IT_AST
+			&kp IT_GREAT &kp IT_USD &kp IT_RPAR &kp IT_RBRC &kp IT_RBKT 	&kp IT_PERC &kp IT_EXCL &kp IT_DQUOT &kp IT_MINUS &kp IT_FSLH
 														&mo FNC  &mo SYM2       &trans &trans
 			>;
 		};
@@ -144,8 +144,8 @@
 		accent_layer {
 			label = "Accent";
 			bindings = <
-			&none &none &none &kp IT_CEGR &none                         &none &none &none &none &none 
-			&kp IT_AGRV &kp IT_IGRV &kp IT_OGRV &kp IT_EGRV &kp IT_EACU &none &none &none &none &none
+			&none &none &none &kp IT_EACU &none                         &none &none &none &none &none 
+			&kp IT_AGRV &kp IT_IGRV &kp IT_OGRV &kp IT_EGRV &none       &none &none &none &none &none
 			&none &none &none &kp IT_UGRV &none                         &none &none &none &none &none
 									&none &none                         &none &none 
 			>;
