@@ -105,10 +105,13 @@
 #define SETTINGS 6
 // -----------------
 
+
+/*
 &sk {
     // don't release mods on other mods presses
     ignore-modifiers;
 };
+*/
 
 / {
     behaviors {
