@@ -7,7 +7,7 @@
 */
 
 
-/*
+
 
 // Row 1
 #define IT_BSLH GRAVE            // backslash
@@ -68,7 +68,7 @@
 #define IT_BKTK RA(MINUS)        // `
 #define IT_TILDE RA(EQUAL)       // ~
 #define IT_CEGR RA(LS(E))        // È
-*/
+
 
 // Copyright 2024 QMK
 // SPDX-License-Identifier: GPL-2.0-or-later
@@ -100,6 +100,7 @@
 // clang-format off
 
 // Aliases
+/*
 #define BR_QUOT KC_GRV  // '
 #define BR_1    KC_1    // 1
 #define BR_2    KC_2    // 2
@@ -185,3 +186,4 @@
 #define BR_MORD ALGR(BR_RBRC) // º
 #define BR_CRUZ ALGR(BR_C)    // ₢
 
+*/
