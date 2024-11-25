@@ -20,6 +20,11 @@
  * │    │    │    │                        │    │    │    │    │
  * └────┴────┴────┴────────────────────────┴────┴────┴────┴────┘
  */
+
+
+#pragma once 
+#include "keycodes.h"
+
 // Row 1
 #define IT_BSLH GRAVE            // backslash
 #define IT_SQUOT MINUS           // '
