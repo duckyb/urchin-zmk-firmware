@@ -88,7 +88,7 @@
         default_layer {
             label = "Base";
             bindings = <
-                &kp BR_Q &kp BR_W &kp BR_E &kp BR_R &kp BR_T           &kp BR_Y &kp BR_U  &kp BR_I     &kp BR_O   &kp BR_P 
+                &kp Q &kp W &kp E &kp R &kp T                          &kp Y &kp U  &kp I     &kp O   &kp P 
                 &kp BR_A &kp BR_S &kp BR_D &kp BR_F &kp BR_G           &kp BR_H &kp BR_J  &kp BR_K     &kp BR_L &kp BR_CCED
                 &kp BR_Z &kp BR_X &kp BR_C &kp BR_V &kp BR_B           &kp BR_N &kp BR_M  &kp BR_COMM &kp BR_DOT &kp BR_SCLN
                 &mo EXT &qt LSHIFT SPACE           &kp SPACE &sl SYM
