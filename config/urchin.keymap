@@ -3,13 +3,8 @@
  *
  * SPDX-License-Identifier: MIT
  */
-
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/outputs.h>
-
 // Layer definitions
+
 #define BASE 0
 #define SYM 1
 #define EXT 2
@@ -17,89 +12,117 @@
 #define SYM2 4
 #define ACCENT 5
 #define SETTINGS 6
+
 // -----------------
 
 / {
-    chosen {
-        zmk,variant = &keymap_abnt2;
-    };
-
+    chosen { zmk,variant = &keymap_abnt2; };
+};
 
 #include "keymap_abnt2.dtsi"
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 
 &sk {
     // don't release mods on other mods presses
+
     ignore-modifiers;
 };
 
+/ {
+    behaviors: behaviors {
+        compatible = "zmk,behaviors";
 
-behaviors {
-    compatible = "zmk,behaviors";
+        // Enables holding the first mod-tap key
+        // by performing a tap-release-hold sequence.
+        // To use it: "&qt KEYCODE1 KEYCODE2"
 
-    // Enables holding the first mod-tap key
-    // by performing a tap-release-hold sequence.
-    // To use it: "&qt KEYCODE1 KEYCODE2"
-    qt: quick_tap {
-        compatible = "zmk,behavior-hold-tap";
-        label = "QUICK_TAP";
-        #binding-cells = <2>;
-        flavor = "hold-preferred";
-        tapping-term-ms = <200>;
-        quick-tap-ms = <200>;
-        bindings = <&kp>, <&kp>;
+        qt: quick_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "QUICK_TAP";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            bindings = <&kp>, <&kp>;
+        };
     };
 
+    macros: macros {
+        compatible = "zmk,macros";
 
+        // sometimes my device thinks a modifier is being held down
+        // pressing all modifiers fixes it.
 
-macros {
-    compatible = "zmk,macros";
+        unstick: unstick {
+            label = "ZM_unstick";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LSHIFT &kp RSHIFT &kp LCTRL &kp RCTRL &kp LALT &kp RALT &kp LGUI &kp RGUI>;
+        };
 
-    // sometimes my device thinks a modifier is being held down
-    // pressing all modifiers fixes it.
-    unstick: unstick {
-        label = "ZM_unstick";
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        bindings = <&kp LSHIFT &kp RSHIFT &kp LCTRL &kp RCTRL &kp LALT &kp RALT &kp LGUI &kp RGUI>;
+        MACRO_1: macro_1 {
+            label = "ê";
+            bindings = <&kp E &kp MINUS>;
+        };
+
+        MACRO_2: macro_2 {
+            label = "ã";
+            bindings = <&kp A &kp BR_TILDE>;
+        };
+
+        MACRO_3: macro_3 {
+            label = "é";
+            bindings = <&kp E &kp EQL>;
+        };
     };
 
-    MACRO_1: macro_1 { label = "ê"; bindings = <&kp E &kp MINUS>; }; 
-    MACRO_2: macro_2 { label = "ã"; bindings = <&kp A &kp BR_TILDE>; }; 
-    MACRO_3: macro_3 { label = "é"; bindings = <&kp E &kp EQL>; }; 
-};
+    combos: combos {
+        compatible = "zmk,combos";
 
-combos {
-    compatible = "zmk,combos";
+        // both right thumb keys
 
-    // both right thumb keys
-    combo_accent {
-        timeout-ms = <200>;
-        key-positions = <32 33>;
-        bindings = <&mo ACCENT>;
+        combo_accent {
+            timeout-ms = <200>;
+            key-positions = <32 33>;
+            bindings = <&mo ACCENT>;
+        };
+
+        // internal-left & external-right thumb keys
+
+        combo_sym2 {
+            timeout-ms = <200>;
+            key-positions = <31 33>;
+            bindings = <&mo SYM2>;
+        };
+
+        // both left thumb keys
+
+        combo_settings {
+            timeout-ms = <200>;
+            key-positions = <30 31>;
+            bindings = <&mo SETTINGS>;
+        };
+
+        // left index & middle fingers (home-row)
+        // hold control & space for Adobe workflow
+
+        combo_ctrl_space {
+            timeout-ms = <200>;
+            key-positions = <12 13>;
+            bindings = <&kp LC(SPACE)>;
+            layers = <BASE>;
+        };
     };
-    // internal-left & external-right thumb keys
-    combo_sym2 {
-        timeout-ms = <200>;
-        key-positions = <31 33>;
-        bindings = <&mo SYM2>;
+
+    keymap: macros {
     };
-    // both left thumb keys
-    combo_settings {
-        timeout-ms = <200>;
-        key-positions = <30 31>;
-        bindings = <&mo SETTINGS>;
+
+    behaviors {
     };
-    // left index & middle fingers (home-row)
-    // hold control & space for Adobe workflow
-    combo_ctrl_space {
-        timeout-ms = <200>;
-        key-positions = <12 13>;
-        bindings = <&kp LC(SPACE)>;
-        layers = <BASE>;
-    };
-};
-};
-keymap {
+
+   keymap {
     compatible = "zmk,keymap";
 
     // Base alpha layer
@@ -177,6 +200,6 @@ keymap {
             &none &none &none &none      &bt BT_SEL 2                    &bt BT_SEL 5 &none &none &none &none
                                 &none &none                        &none &none 
         >;
+        };
     };
 };
-
