@@ -98,7 +98,7 @@ combos {
         layers = <BASE>;
     };
 };
-
+};
 keymap {
     compatible = "zmk,keymap";
 
@@ -179,4 +179,4 @@ keymap {
         >;
     };
 };
-};
+
