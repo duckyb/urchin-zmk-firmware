@@ -89,8 +89,8 @@
             label = "Base";
             bindings = <
                 &kp Q &kp W &kp E &kp R &kp T                          &kp Y &kp U  &kp I     &kp O   &kp P 
-                &kp BR_A &kp BR_S &kp BR_D &kp BR_F &kp BR_G           &kp BR_H &kp BR_J  &kp BR_K     &kp BR_L &kp BR_CCED
-                &kp BR_Z &kp BR_X &kp BR_C &kp BR_V &kp BR_B           &kp BR_N &kp BR_M  &kp BR_COMM &kp BR_DOT &kp BR_SCLN
+                &kp A &kp S &kp D &kp F &kp G           &kp H &kp J  &kp K     &kp L &kp BR_CCED
+                &kp Z &kp X &kp C &kp V &kp B           &kp N &kp M  &kp BR_COMM &kp BR_DOT &kp BR_SCLN
                 &mo EXT &qt LSHIFT SPACE           &kp SPACE &sl SYM
             >;
         };
