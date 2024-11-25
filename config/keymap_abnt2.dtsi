@@ -24,7 +24,7 @@
 *******************************************************************************/
 
 #pragma once
-#include "keycodes.h"
+#include "keymap_abnt2.dtsi"
 // clang-format off
 
 // Aliases
