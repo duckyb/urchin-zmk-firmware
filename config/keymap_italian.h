@@ -7,7 +7,7 @@
 */
 
 
-
+/*
 
 // Row 1
 #define IT_BSLH GRAVE            // backslash
@@ -98,9 +98,9 @@
 //#pragma once
 //#include "keymap_italian.h"
 // clang-format off
-
+*/
 // Aliases
-/*
+
 #define BR_QUOT KC_GRV  // '
 #define BR_1    KC_1    // 1
 #define BR_2    KC_2    // 2
@@ -186,4 +186,3 @@
 #define BR_MORD ALGR(BR_RBRC) // º
 #define BR_CRUZ ALGR(BR_C)    // ₢
 
-*/
