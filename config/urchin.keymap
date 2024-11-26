@@ -101,14 +101,18 @@
 
 		// Numbers and high frequency symbols
 		sym_layer {
-			label = "Sym.";
-			bindings = <
-			&kp N1 &kp N2 &kp N3 &kp N4 &kp N5		                                    &kp N6 &kp N7 &kp N8 &kp N9 &kp N0
-			&kp N1 &kp IT_USD &kp IT_LPAR &kp IT_LBRC &kp IT_LBKT  &kp IT_EQL &kp IT_QUES &kp IT_SQUOT &kp IT_MINUS &kp IT_AST
-			&kp N1 &kp IT_PERC &kp IT_RPAR &kp IT_RBRC &kp IT_RBKT 	&kp IT_AT &kp IT_EXCL &kp IT_DQUOT &kp IT_PLUS &kp IT_FSLH
-														&mo FNC  &mo SYM2       &trans &trans
-			>;
-		};
+    label = "Sym.";
+    bindings = < 
+        &kp BR_1 &kp BR_2 &kp BR_3 &kp BR_4 &kp BR_5 
+        &kp BR_6 &kp BR_7 &kp BR_8 &kp BR_9 &kp BR_0 
+        &kp BR_1 &kp IT_USD &kp IT_LPAR &kp IT_LBRC &kp IT_LBKT 
+        &kp IT_EQL &kp IT_QUES &kp IT_SQUOT &kp IT_MINUS &kp IT_AST 
+        &kp BR_1 &kp IT_PERC &kp IT_RPAR &kp IT_RBRC &kp IT_RBKT 
+        &kp IT_AT &kp IT_EXCL &kp IT_DQUOT &kp IT_PLUS &kp IT_FSLH 
+        &mo FNC &mo SYM2 &trans &trans 
+    >; 
+};
+
 
 		// Main modifiers and arrow keys
 		ext_layer {
