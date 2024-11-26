@@ -63,6 +63,14 @@
 
             label = "CDILHA";
         };
+
+        eh: eh {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press>, <&none>;
+
+            label = "EH";
+        };
     };
 
     combos {
@@ -159,10 +167,10 @@
         symbols_2_layer {
             label = "Sym.2";
             bindings = <
-  &kp IT_CARET  &kp IT_UNDER  &kp IT_PND   &kp IT_EUR   &kp IT_HASH    &none  &none  &none  &none  &none
-  &kp IT_BKTK   &kp IT_TILDE  &kp IT_BSLH  &kp IT_PIPE  &kp IT_AND     &none  &none  &none  &none  &none
-  &none         &none         &kp IT_SECT  &kp IT_CCED  &kp IT_DEG     &none  &none  &none  &none  &none
-                                           &none        &none          &none  &none
+  &kp CARET  &kp UNDERSCORE  &kp IT_PND            &kp IT_EUR   &kp POUND        &none  &none  &none  &none  &none
+  &kp GRAVE  &kp TILDE       &kp NON_US_BACKSLASH  &kp PIPE     &kp AMPERSAND    &none  &none  &none  &none  &none
+  &none      &none           &kp IT_SECT           &kp IT_CCED  &kp IT_DEG       &none  &none  &none  &none  &none
+                                                   &none        &none            &none  &none
             >;
         };
 
