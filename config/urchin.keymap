@@ -56,24 +56,15 @@
             bindings = <&kp LSHIFT &kp RSHIFT &kp LCTRL &kp RCTRL &kp LALT &kp RALT &kp LGUI &kp RGUI>;
         };
 
-        cdilha: cdilha {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press>, <&kp SINGLE_QUOTE &kp C>;
+cedilha_macro { label = "Cedilha Macro"; compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp KC_QUOT &kp C>; };
 
-            label = "CDILHA";
-        };
+a_til_macro { label = "A Til Macro"; compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp KC_TILDE &kp A>; };
 
-        eh: eh {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press>, <&none>;
+e_acute_macro { label = "E Acute Macro"; compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp KC_QUOT &kp E>;};
+    
+e_circum_macro { label = "E Circumflex Macro"; compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp KC_CIRC &kp E>; };
 
-            label = "EH";
-        };
-    };
-
-    combos {
+combos {
         compatible = "zmk,combos";
 
         // both right thumb keys
