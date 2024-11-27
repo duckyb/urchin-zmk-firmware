@@ -53,27 +53,28 @@
 
  
 
-        a_til_macro {
+        atil: a_til_macro {
             label = "A Til Macro";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp KC_TILDE &kp A>;
         };
 
-      e_acute_macro {
-    label = "E Acute Macro";
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>;
-    bindings = <&kp KC_ACUT &kp E>;
-};
+        acut:  e_acute_macro {
+        label = "E Acute Macro";
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&kp KC_ACUT &kp E>;
+        };
 
 
-        e_circum_macro {
+        ecircum: e_circum_macro {
             label = "E Circumflex Macro";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp KC_CIRC &kp E>;
-        };
+          };
+
     };
 
     combos {
