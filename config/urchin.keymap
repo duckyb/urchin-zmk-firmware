@@ -54,15 +54,19 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LSHIFT &kp RSHIFT &kp LCTRL &kp RCTRL &kp LALT &kp RALT &kp LGUI &kp RGUI>;
-        };
 
-cedilha_macro { label = "Cedilha Macro"; compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp KC_QUOT &kp C>; };
 
-a_til_macro { label = "A Til Macro"; compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp KC_TILDE &kp A>; };
 
-e_acute_macro { label = "E Acute Macro"; compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp KC_QUOT &kp E>;};
+cedilha: cedilha_macro { label = "Cedilha Macro"; compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp KC_QUOT &kp C>; };
+
+til: a_til_macro { label = "A Til Macro"; compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp KC_TILDE &kp A>; };
+
+grave: e_acute_macro { label = "E Acute Macro"; compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp KC_QUOT &kp E>;};
     
-e_circum_macro { label = "E Circumflex Macro"; compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp KC_CIRC &kp E>; };
+agudo: e_circum_macro { label = "E Circumflex Macro"; compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp KC_CIRC &kp E>; };
+
+
+        };
 
 combos {
         compatible = "zmk,combos";
