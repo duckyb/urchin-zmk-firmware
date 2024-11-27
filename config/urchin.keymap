@@ -51,12 +51,7 @@
             bindings = <&kp LSHIFT &kp RSHIFT &kp LCTRL &kp RCTRL &kp LALT &kp RALT &kp LGUI &kp RGUI>;
         };
 
-        cedilha_macro {
-            label = "Cedilha Macro";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp KC_QUOT &kp C>;
-        };
+ 
 
         a_til_macro {
             label = "A Til Macro";
@@ -123,7 +118,7 @@
             label = "Base";
             bindings = <
                 &kp Q  &kp W  &kp E  &kp R    &kp T               &kp Y      &kp U    &kp I      &kp O    &kp P
-                &kp A  &kp S  &kp D  &kp F    &kp G               &kp H      &kp J    &kp K      &kp L    &cedilha_macro
+                &kp A  &kp S  &kp D  &kp F    &kp G               &kp H      &kp J    &kp K      &kp L    &kp IT_CCED
                 &kp Z  &kp X  &kp C  &kp V    &kp B               &kp N      &kp M    &kp COMMA  &kp DOT  &kp SEMICOLON
                                   &mo EXT  &qt LSHIFT SPACE    &kp SPACE  &sl SYM
             >;
