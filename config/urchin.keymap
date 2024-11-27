@@ -184,7 +184,14 @@
         };
 
         // Used to change the keyboard's settings
-              settings_layer {
+        settings_layer {
+            label = "Sett.";
+            bindings = <
+                &bootloader  &none  &none  &bt BT_CLR  &bt BT_SEL 0    &bt BT_SEL 3  &none  &unstick  &none  &bootloader
+                &none
+
+        // Used to change the keyboard's settings
+                 settings_layer {
             label = "Sett.";
             bindings = <
                 &bootloader  &none  &none  &bt BT_CLR  &bt BT_SEL 0    &bt BT_SEL 3  &none  &unstick  &none  &bootloader
@@ -195,3 +202,4 @@
         };
     };
 };
+
