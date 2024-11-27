@@ -47,7 +47,7 @@
 #define KC_LABK S(KC_COMMA) // <
 #define KC_RABK S(KC_DOT)  // >
 #define KC_QUES S(KC_SLASH) // ?
-#define KC_ACUT KC_QUOTE // ´ (acento agudo)
+#define KC_ACUT QUOTE // ´ (acento agudo)
 #define KC_TILDE KC_TILD
 #define KC_EXCLAIM KC_EXLM
 #define KC_DOLLAR KC_DLR
