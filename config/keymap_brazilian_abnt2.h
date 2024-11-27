@@ -23,7 +23,7 @@
 
 
 #pragma once 
-#include "keycodes.h"
+#include "keymap_brazilian_abnt2.h"
 
 // Row 1
 #define IT_BSLH GRAVE            // backslash
