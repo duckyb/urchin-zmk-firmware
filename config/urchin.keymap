@@ -51,30 +51,6 @@
             bindings = <&kp LSHIFT &kp RSHIFT &kp LCTRL &kp RCTRL &kp LALT &kp RALT &kp LGUI &kp RGUI>;
         };
 
- 
-
-        atil: a_til_macro {
-            label = "A Til Macro";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp KC_TILDE &kp A>;
-        };
-
-        acut:  e_acute_macro {
-        label = "E Acute Macro";
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        bindings = <&kp KC_ACUT &kp E>;
-        };
-
-
-        ecircum: e_circum_macro {
-            label = "E Circumflex Macro";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp KC_CIRC &kp E>;
-          };
-
     };
 
     combos {
