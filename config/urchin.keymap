@@ -94,6 +94,94 @@
         };
     };
 
+
+keymap {
+    compatible = "zmk,keymap";
+
+    // Base alpha layer
+    default_layer {
+        label = "Base";
+        bindings = <
+            &kp Q  &kp W  &kp E  &kp R    &kp T               &kp Y      &kp U    &kp I      &kp O    &kp P
+            &kp A  &kp S  &kp D  &kp F    &kp G               &kp H      &kp J    &kp K      &kp L    &kp BR_CCED
+            &kp Z  &kp X  &kp C  &kp V    &kp B               &kp N      &kp M    &kp COMMA  &kp DOT  &kp SEMICOLON
+                              &mo EXT  &qt LSHIFT SPACE    &kp SPACE  &sl SYM
+        >;
+    };
+
+    // Numbers and high frequency symbols
+    sym_layer {
+        label = "Sym.";
+        bindings = <
+            &kp N1            &kp N2       &kp N3                 &kp N4     &kp N5               &kp N6  &kp N7           &kp N8             &kp N9     &kp N0
+            &kp LESS_THAN     &kp AT_SIGN  &kp LEFT_PARENTHESIS   &kp LEFT_BRACE   &kp LEFT_BRACKET     &kp EQUAL     &kp QUESTION     &kp SINGLE_QUOTE   &kp PLUS   &kp ASTERISK
+            &kp GREATER_THAN  &kp DOLLAR   &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp RIGHT_BRACKET    &kp PERCENT   &kp EXCLAMATION  &kp DOUBLE_QUOTES  &kp MINUS  &kp SLASH
+                                                        &mo FNC          &mo SYM2             &trans        &trans
+        >;
+    };
+
+    // Main modifiers and arrow keys
+    ext_layer {
+        label = "Mods";
+        bindings = <
+            &kp ESC    &kp C_PREV  &kp C_PP    &kp C_NEXT  &kp C_PAUSE    &kp PG_UP     &kp HOME  &kp UP    &kp END    &kp CAPS
+            &sk LALT   &sk LGUI    &sk LSHIFT  &sk LCTRL   &kp RALT       &kp PG_DN     &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL
+            &kp LC(Z)  &kp LC(X)   &kp LC(C)   &kp TAB     &kp LC(V)      &kp LC(BSPC)  &kp BSPC  &trans    &trans     &trans
+                                      &trans      &kp LCTRL      &kp ENTER     &mo FNC
+        >;
+    };
+
+    // Function keys with modifiers
+    fnc_layer {
+        label = "FRow";
+        bindings = <
+            &kp F1    &kp F2    &kp F3      &kp F4     &kp F5      &kp F6   &kp F7   &kp F8           &kp F9  &kp F10
+            &sk LALT  &sk LGUI  &sk LSHIFT  &sk LCTRL  &kp RALT    &kp F11  &kp F12  &kp PRINTSCREEN  &trans  &trans
+            &none     &none     &none       &none      &none       &none    &none    &none            &none   &none
+                                  &none      &none       &none    &none
+        >;
+    };
+
+    // Low frequency symbols
+    symbols_2_layer {
+        label = "Sym.2";
+        bindings = <
+            &kp CARET  &kp UNDERSCORE  &kp BR_PND            &kp BR_EUR   &kp BR_POUND        &none  &none  &none  &none  &none
+            &kp GRAVE  &sk TILDE       &kp NON_US_BACKSLASH  &kp PIPE     &kp AMPERSAND    &none  &none  &none  &none  &none
+            &none      &none           &kp BR_SECT           &kp BR_CCED  &kp BR_DEG       &none  &none  &none  &none  &none
+                                             &none        &none            &none        &none
+        >;
+    };
+
+    // Used to type regional accents
+    accent_layer {
+        label = "Accent";
+        bindings = <
+            &none        &none        &none        &kp BR_CEGR  &none          &none  &none  &none  &none  &none
+            &kp BR_AGRV  &kp BR_IGRV  &kp BR_OGRV  &kp BR_EGRV  &kp BR_EACU    &none  &none  &none  &none  &none
+            &none        &none        &none        &kp BR_UGRV  &none          &none  &none  &none  &none  &none
+                                             &none        &none          &none      &none
+        >;
+    };
+
+    // Used to change the keyboard's settings
+    settings_layer {
+        label = "Sett.";
+        bindings = <
+            &bootloader  &none  &none  &bt BT_CLR  &bt BT_SEL 0    &bt BT_SEL 3  &none  &unstick  &none  &bootloader
+            &none        &none  &none  &none       &bt BT_SEL 1    &bt BT_SEL 4  &none  &none     &none  &none
+            &none        &none  &none  &none       &bt BT_SEL 2    &bt BT_SEL 5  &none  &none     &none  &none
+                               &none       &none           &none         &none
+        >;
+    };
+};
+
+
+
+
+
+
+/*
     keymap {
         compatible = "zmk,keymap";
 
@@ -182,3 +270,5 @@
         };
     };
 };
+
+*/
