@@ -79,7 +79,7 @@
 
         combo_settings {
             timeout-ms = <200>;
-            key-positions = <30 31>;
+            key-positions = <30 31 2 3 12 13>;
             bindings = <&mo SETTINGS>;
         };
 
@@ -120,7 +120,7 @@
             label = "Base";
             bindings = <
   &kp Q  &kp W  &kp E  &kp R    &kp T               &kp Y      &kp U    &kp I      &kp O    &kp P
-  &kp A  &kp S  &kp D  &kp F    &kp G               &kp H      &kp J    &kp K      &kp L    &kp IT_CCED
+  &kp A  &kp S  &kp D  &kp F    &kp G               &kp H      &kp J    &kp K      &kp L    &kp SEMICOLON
   &kp Z  &kp X  &kp C  &kp V    &kp B               &kp N      &kp M    &kp COMMA  &kp DOT  &kp SEMICOLON
                        &mo EXT  &qt LSHIFT SPACE    &kp SPACE  &sl SYM
             >;
@@ -167,10 +167,10 @@
         symbols_2_layer {
             label = "Sym.2";
             bindings = <
-  &kp CARET  &kp UNDERSCORE  &kp MINUS             &kp AMPERSAND  &kp POUND     &none  &none  &none  &none  &none
-  &kp GRAVE  &sk TILDE       &kp NON_US_BACKSLASH  &kp PIPE       &kp SLASH     &none  &none  &none  &none  &none
-  &none      &none           &kp IT_SECT           &kp IT_CCED    &kp IT_DEG    &none  &none  &none  &none  &none
-                                                   &none          &none         &none  &none
+  &kp CARET       &kp UNDERSCORE  &kp MINUS             &kp AMPERSAND  &kp POUND     &none  &none  &none  &none  &none
+  &kp LEFT_BRACE  &sk TILDE       &kp NON_US_BACKSLASH  &kp PIPE       &kp SLASH     &none  &none  &none  &none  &none
+  &none           &none           &kp IT_SECT           &kp IT_CCED    &kp IT_DEG    &none  &none  &none  &none  &none
+                                                        &none          &none         &none  &none
             >;
         };
 
