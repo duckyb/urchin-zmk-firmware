@@ -86,13 +86,6 @@
         // left index & middle fingers (home-row)
         // hold control & space for Adobe workflow
 
-        Enter {
-            bindings = <&kp ENTER>;
-            key-positions = <23 24>;
-            timeout-ms = <0>;
-            layers = <0>;
-        };
-
         Backspace {
             bindings = <&kp BACKSPACE>;
             key-positions = <13 14>;
@@ -122,6 +115,11 @@
             bindings = <&kp K_PLAY_PAUSE>;
             key-positions = <2 3>;
         };
+
+        Enter {
+            bindings = <&kp RETURN>;
+            key-positions = <24 23>;
+        };
     };
 
     keymap {
@@ -133,8 +131,8 @@
             label = "Base";
             bindings = <
   &kp Q  &kp W  &kp E  &kp R    &kp T               &kp Y      &kp U    &kp I      &kp O    &kp P
-  &kp A  &kp S  &kp D  &kp F    &kp G               &kp H      &kp J    &kp K      &kp L    &kp SEMICOLON
-  &kp Z  &kp X  &kp C  &kp V    &kp B               &kp N      &kp M    &kp COMMA  &kp DOT  &kp SEMICOLON
+  &kp A  &kp S  &kp D  &kp F    &kp G               &kp H      &kp J    &kp K      &kp L    &kp SEMI
+  &kp Z  &kp X  &kp C  &kp V    &kp B               &kp N      &kp M    &kp COMMA  &kp DOT  &kp INT1
                        &mo EXT  &qt LSHIFT SPACE    &kp SPACE  &sl SYM
             >;
         };
@@ -146,7 +144,7 @@
             bindings = <
   &kp N1            &kp N2       &kp N3                 &kp NUMBER_4     &kp N5               &kp NUMBER_6  &kp N7           &kp N8             &kp N9     &kp N0
   &kp LESS_THAN     &kp AT_SIGN  &kp LEFT_PARENTHESIS   &kp RIGHT_BRACE  &kp RIGHT_BRACKET    &kp EQUAL     &kp RA(W)        &kp SINGLE_QUOTE   &kp PLUS   &kp ASTERISK
-  &kp GREATER_THAN  &kp DOLLAR   &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp RIGHT_BRACKET    &kp PERCENT   &kp EXCLAMATION  &kp DOUBLE_QUOTES  &kp MINUS  &kp SLASH
+  &kp GREATER_THAN  &kp DOLLAR   &kp RIGHT_PARENTHESIS  &kp PIPE         &kp RIGHT_BRACKET    &kp PERCENT   &kp EXCLAMATION  &kp DOUBLE_QUOTES  &kp MINUS  &kp SLASH
                                                         &mo FNC          &mo SYM2             &trans        &trans
             >;
         };
@@ -180,10 +178,10 @@
         symbols_2_layer {
             label = "Sym.2";
             bindings = <
-  &sk LS(SINGLE_QUOTE)  &kp UNDERSCORE    &kp MINUS             &kp AMPERSAND  &kp POUND     &none  &none  &none  &none  &none
-  &kp LEFT_BRACE        &sk SINGLE_QUOTE  &kp NON_US_BACKSLASH  &kp PIPE       &kp INT1      &none  &none  &none  &none  &none
-  &none                 &none             &kp IT_SECT           &kp IT_CCED    &kp IT_DEG    &none  &none  &none  &none  &none
-                                                                &none          &none         &none  &none
+  &sk LS(SINGLE_QUOTE)  &kp UNDERSCORE    &kp MINUS             &kp AMPERSAND  &kp POUND        &none  &none  &none  &none  &none
+  &sk LEFT_BRACE        &sk SINGLE_QUOTE  &kp NON_US_BACKSLASH  &kp PIPE       &kp KP_DIVIDE    &none  &none  &none  &none  &none
+  &none                 &none             &kp IT_SECT           &kp IT_CCED    &kp RA(W)        &none  &none  &none  &none  &none
+                                                                &none          &none            &none  &none
             >;
         };
 
@@ -208,6 +206,15 @@
   &none        &none  &none  &none       &bt BT_SEL 1    &bt BT_SEL 4  &none  &none     &none  &none
   &none        &none  &none  &none       &bt BT_SEL 2    &bt BT_SEL 5  &none  &none     &none  &none
                              &none       &none           &none         &none
+            >;
+        };
+
+        layer_7 {
+            bindings = <
+  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+                          &trans  &trans    &trans  &trans
             >;
         };
     };
