@@ -92,9 +92,24 @@
             bindings = <&kp LC(SPACE)>;
             layers = <BASE>;
         };
+
+        Enter {
+            bindings = <&kp ENTER>;
+            key-positions = <23 24>;
+            timeout-ms = <0>;
+            layers = <0>;
+        };
+
+        Backspace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <13 14>;
+        };
+
+        Tab {
+            bindings = <&kp TAB>;
+            key-positions = <3 4>;
+        };
     };
-
-
 
     keymap {
         compatible = "zmk,keymap";
@@ -117,7 +132,7 @@
             label = "Sym.";
             bindings = <
   &kp N1            &kp N2       &kp N3                 &kp NUMBER_4     &kp N5               &kp NUMBER_6  &kp N7           &kp N8             &kp N9     &kp N0
-  &kp LESS_THAN     &kp AT_SIGN  &kp LEFT_PARENTHESIS   &kp LEFT_BRACE   &kp LEFT_BRACKET     &kp EQUAL     &kp QUESTION     &kp SINGLE_QUOTE   &kp PLUS   &kp ASTERISK
+  &kp LESS_THAN     &kp AT_SIGN  &kp LEFT_PARENTHESIS   &kp RIGHT_BRACE  &kp RIGHT_BRACKET    &kp EQUAL     &kp RA(W)        &kp SINGLE_QUOTE   &kp PLUS   &kp ASTERISK
   &kp GREATER_THAN  &kp DOLLAR   &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp RIGHT_BRACKET    &kp PERCENT   &kp EXCLAMATION  &kp DOUBLE_QUOTES  &kp MINUS  &kp SLASH
                                                         &mo FNC          &mo SYM2             &trans        &trans
             >;
@@ -152,10 +167,10 @@
         symbols_2_layer {
             label = "Sym.2";
             bindings = <
-  &kp CARET  &kp UNDERSCORE  &kp IT_PND            &kp IT_EUR   &kp POUND        &none  &none  &none  &none  &none
-  &kp GRAVE  &sk TILDE       &kp NON_US_BACKSLASH  &kp PIPE     &kp AMPERSAND    &none  &none  &none  &none  &none
-  &none      &none           &kp IT_SECT           &kp IT_CCED  &kp IT_DEG       &none  &none  &none  &none  &none
-                                                   &none        &none            &none  &none
+  &kp CARET  &kp UNDERSCORE  &kp MINUS             &kp AMPERSAND  &kp POUND     &none  &none  &none  &none  &none
+  &kp GRAVE  &sk TILDE       &kp NON_US_BACKSLASH  &kp PIPE       &kp SLASH     &none  &none  &none  &none  &none
+  &none      &none           &kp IT_SECT           &kp IT_CCED    &kp IT_DEG    &none  &none  &none  &none  &none
+                                                   &none          &none         &none  &none
             >;
         };
 
@@ -184,5 +199,3 @@
         };
     };
 };
-
-
