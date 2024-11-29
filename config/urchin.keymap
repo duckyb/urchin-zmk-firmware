@@ -180,10 +180,10 @@
         symbols_2_layer {
             label = "Sym.2";
             bindings = <
-  &sk LS(SINGLE_QUOTE)  &kp UNDERSCORE  &kp MINUS             &kp AMPERSAND  &kp POUND     &none  &none  &none  &none  &none
-  &kp LEFT_BRACE        &sk TILDE       &kp NON_US_BACKSLASH  &kp PIPE       &kp SLASH     &none  &none  &none  &none  &none
-  &none                 &none           &kp IT_SECT           &kp IT_CCED    &kp IT_DEG    &none  &none  &none  &none  &none
-                                                              &none          &none         &none  &none
+  &sk LS(SINGLE_QUOTE)  &kp UNDERSCORE    &kp MINUS             &kp AMPERSAND  &kp POUND     &none  &none  &none  &none  &none
+  &kp LEFT_BRACE        &sk SINGLE_QUOTE  &kp NON_US_BACKSLASH  &kp PIPE       &kp INT1      &none  &none  &none  &none  &none
+  &none                 &none             &kp IT_SECT           &kp IT_CCED    &kp IT_DEG    &none  &none  &none  &none  &none
+                                                                &none          &none         &none  &none
             >;
         };
 
