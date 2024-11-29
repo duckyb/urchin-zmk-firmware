@@ -79,19 +79,12 @@
 
         combo_settings {
             timeout-ms = <200>;
-            key-positions = <30 31 2 3 12 13>;
+            key-positions = <30 31>;
             bindings = <&mo SETTINGS>;
         };
 
         // left index & middle fingers (home-row)
         // hold control & space for Adobe workflow
-
-        combo_ctrl_space {
-            timeout-ms = <200>;
-            key-positions = <12 13>;
-            bindings = <&kp LC(SPACE)>;
-            layers = <BASE>;
-        };
 
         Enter {
             bindings = <&kp ENTER>;
@@ -108,6 +101,26 @@
         Tab {
             bindings = <&kp TAB>;
             key-positions = <3 4>;
+        };
+
+        Esc {
+            bindings = <&kp ESCAPE>;
+            key-positions = <0 1>;
+        };
+
+        Ctrl-stiky {
+            bindings = <&sk LEFT_CONTROL>;
+            key-positions = <20 21>;
+        };
+
+        Shift_sticky {
+            bindings = <&sk LEFT_SHIFT>;
+            key-positions = <10 11>;
+        };
+
+        Play-Pause {
+            bindings = <&kp K_PLAY_PAUSE>;
+            key-positions = <2 3>;
         };
     };
 
