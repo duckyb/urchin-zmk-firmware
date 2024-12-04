@@ -14,8 +14,10 @@
 ---
 include:
   - board: nice_nano_v2
-    shield: urchin_left 
+    shield: urchin_left
   - board: nice_nano_v2
-    shield: urchin_right 
+    shield: urchin_right
   - board: nice_nano_v2
     shield: settings_reset
+  - board: nice_nano_v2
+    shield: oled_normal_display  # Adicionando o display OLED normal
