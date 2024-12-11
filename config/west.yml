@@ -9,7 +9,7 @@ manifest:
       # kyek / duckyb
     - name: duckyb
       url-base: https://github.com/duckyb
-      - name: mctechnology17
+    - name: mctechnology17
       url-base: https://github.com/mctechnology17
   projects:
     - name: zmk
