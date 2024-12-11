@@ -9,8 +9,6 @@ manifest:
       # kyek / duckyb
     - name: duckyb
       url-base: https://github.com/duckyb
-    - name: mctechnology17
-      url-base: https://github.com/mctechnology17
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -18,9 +16,6 @@ manifest:
       import: app/west.yml
     - name: urchin-zmk-module
       remote: duckyb
-      revision: main
-    - name: zmk-nice-oled
-      remote: mctechnology17
       revision: main
   self:
     path: config
