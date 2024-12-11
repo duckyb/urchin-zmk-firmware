@@ -61,6 +61,34 @@
             bindings = <&sk LS(NUMBER_6) &kp E>;
             label = "CARET";
         };
+
+        quote: quote {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&sk LS(SINGLE_QUOTE) &kp E>;
+            label = "QUOTE";
+        };
+
+        tilde: tilde {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&sk TILDE &kp A>;
+            label = "TILDE";
+        };
+
+        accent: accent {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&sk GRAVE &kp A>;
+            label = "ACCENT";
+        };
+
+        crtlAlt: crtlAlt {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RCTRL &kp LEFT_ALT>;
+            label = "CRTLALT";
+        };
     };
 
     combos {
@@ -95,12 +123,12 @@
 
         Backspace {
             bindings = <&kp BACKSPACE>;
-            key-positions = <13 14>;
+            key-positions = <14 13>;
         };
 
         Tab {
             bindings = <&kp TAB>;
-            key-positions = <3 4>;
+            key-positions = <4 3>;
         };
 
         Esc {
@@ -131,6 +159,21 @@
         Linguagem {
             bindings = <&kp LG(SPACE)>;
             key-positions = <30 31 32 33>;
+        };
+
+        enter2 {
+            bindings = <&kp RETURN>;
+            key-positions = <25 26>;
+        };
+
+        backspace2 {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <15 16>;
+        };
+
+        ControlAlt {
+            bindings = <&crtlAlt>;
+            key-positions = <20 10 0>;
         };
     };
 
@@ -202,10 +245,10 @@
         accent_layer {
             label = "Accent";
             bindings = <
-  &none  &none  &none   &kp IT_CEGR  &none          &none  &none  &none  &none  &none
-  &kp A  &kp A  &caret  &kp IT_EGRV  &kp IT_EACU    &none  &none  &none  &none  &none
-  &none  &none  &none   &kp IT_UGRV  &none          &none  &none  &none  &none  &none
-                        &none        &none          &none  &none
+  &accent  &none  &none   &caret  &sk SINGLE_QUOTE    &none  &none  &none  &none  &none
+  &tilde   &none  &caret  &quote  &sk CARET           &none  &none  &none  &none  &none
+  &none    &none  &none   &none   &sk TILDE           &none  &none  &none  &none  &none
+                          &none   &none               &none  &none
             >;
         };
 
