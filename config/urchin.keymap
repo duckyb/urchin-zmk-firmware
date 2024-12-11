@@ -186,7 +186,7 @@
             label = "Base";
             bindings = <
   &kp Q  &kp W  &kp E  &kp R  &kp T               &kp Y      &kp U  &kp I      &kp O    &kp P
-  &kp A  &kp S  &kp D  &kp F  &kp G               &kp H      &kp J  &kp K      &kp L    &kp LS(INT1)
+  &kp A  &kp S  &kp D  &kp F  &kp G               &kp H      &kp J  &kp K      &kp L    &kp QMARK
   &kp Z  &kp X  &kp C  &kp V  &kp B               &kp N      &kp M  &kp COMMA  &kp DOT  &kp SEMICOLON
                        &mo 2  &qt LSHIFT SPACE    &kp SPACE  &sl 1
             >;
@@ -197,9 +197,9 @@
         sym_layer {
             label = "Sym.";
             bindings = <
-  &kp N1            &kp N2       &kp N3                 &kp NUMBER_4     &kp N5               &kp NUMBER_6  &kp N7           &kp N8             &kp N9     &kp N0
-  &kp LESS_THAN     &kp AT_SIGN  &kp LEFT_PARENTHESIS   &kp LEFT_BRACE   &kp LEFT_BRACKET     &kp EQUAL     &kp RA(W)        &kp SINGLE_QUOTE   &kp PLUS   &kp ASTERISK
-  &kp GREATER_THAN  &kp DOLLAR   &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp RIGHT_BRACKET    &kp PERCENT   &kp EXCLAMATION  &kp DOUBLE_QUOTES  &kp MINUS  &kp SLASH
+  &kp N1            &kp N2       &kp N3                 &kp NUMBER_4     &kp N5               &kp NUMBER_6  &kp N7            &kp N8             &kp N9     &kp N0
+  &kp LESS_THAN     &kp AT_SIGN  &kp LEFT_PARENTHESIS   &kp LEFT_BRACE   &kp LEFT_BRACKET     &kp EQUAL     &kp RA(QUESTION)  &kp SINGLE_QUOTE   &kp PLUS   &kp ASTERISK
+  &kp GREATER_THAN  &kp DOLLAR   &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp RIGHT_BRACKET    &kp PERCENT   &kp EXCLAMATION   &kp DOUBLE_QUOTES  &kp MINUS  &kp SLASH
                                                         &mo 3            &mo 4                &trans        &trans
             >;
         };
