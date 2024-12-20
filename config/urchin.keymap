@@ -153,7 +153,7 @@
 
         Enter {
             bindings = <&kp RETURN>;
-            key-positions = <24 23>;
+            key-positions = <23 22 24>;
         };
 
         Linguagem {
