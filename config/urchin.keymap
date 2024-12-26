@@ -98,15 +98,15 @@
 
         combo_accent {
             timeout-ms = <200>;
-            key-positions = <32 33>;
-            bindings = <&mo 5>;
+            key-positions = <33 31>;
+            bindings = <&mo 0>;
         };
 
         // internal-left & external-right thumb keys
 
         combo_sym2 {
             timeout-ms = <200>;
-            key-positions = <31 33>;
+            key-positions = <33 32>;
             bindings = <&mo 4>;
         };
 
@@ -115,7 +115,7 @@
         combo_settings {
             timeout-ms = <200>;
             key-positions = <30 31>;
-            bindings = <&mo 6>;
+            bindings = <&mo 5>;
         };
 
         // left index & middle fingers (home-row)
@@ -163,7 +163,7 @@
 
         enter2 {
             bindings = <&kp RETURN>;
-            key-positions = <25 26>;
+            key-positions = <25 26 27>;
         };
 
         backspace2 {
@@ -174,6 +174,11 @@
         ControlAlt {
             bindings = <&crtlAlt>;
             key-positions = <20 10 0>;
+        };
+
+        PrintScreem {
+            bindings = <&kp PRINTSCREEN>;
+            key-positions = <0 4>;
         };
     };
 
@@ -198,8 +203,8 @@
             label = "Sym.";
             bindings = <
   &kp N1            &kp N2       &kp N3                 &kp NUMBER_4     &kp N5               &kp NUMBER_6  &kp N7           &kp N8             &kp N9     &kp N0
-  &kp LESS_THAN     &kp AT_SIGN  &kp LEFT_PARENTHESIS   &kp LEFT_BRACE   &kp LEFT_BRACKET     &kp EQUAL     &kp GRAVE        &kp SINGLE_QUOTE   &kp PLUS   &kp ASTERISK
-  &kp GREATER_THAN  &kp DOLLAR   &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp RIGHT_BRACKET    &kp PERCENT   &kp EXCLAMATION  &kp DOUBLE_QUOTES  &kp MINUS  &kp SLASH
+  &kp LESS_THAN     &kp AT_SIGN  &kp LEFT_PARENTHESIS   &kp LEFT_BRACE   &kp LEFT_BRACKET     &kp EQUAL     &sk TILDE        &kp SINGLE_QUOTE   &kp PLUS   &kp ASTERISK
+  &kp GREATER_THAN  &kp DOLLAR   &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp RIGHT_BRACKET    &kp PERCENT   &kp EXCLAMATION  &kp DOUBLE_QUOTES  &kp MINUS  &sk CARET
                                                         &mo 3            &mo 4                &trans        &trans
             >;
         };
@@ -235,23 +240,12 @@
             bindings = <
   &sk LS(SINGLE_QUOTE)  &kp UNDERSCORE    &kp MINUS             &kp AMPERSAND  &kp POUND    &none  &none  &none  &none  &none
   &sk TILDE             &sk SINGLE_QUOTE  &kp NON_US_BACKSLASH  &kp PIPE       &kp SLASH    &none  &none  &none  &none  &none
-  &sk CARET             &none             &kp IT_SECT           &kp IT_CCED    &kp RA(W)    &none  &none  &none  &none  &none
+  &sk CARET             &none             &none                 &none          &kp RA(W)    &none  &none  &none  &none  &none
                                                                 &none          &none        &none  &none
             >;
         };
 
         // Used to type regional accents
-
-        accent_layer {
-            label = "Accent";
-            bindings = <
-  &accent  &none  &none   &caret  &sk SINGLE_QUOTE    &none  &none  &none  &none  &none
-  &tilde   &none  &caret  &quote  &sk CARET           &none  &none  &none  &none  &none
-  &none    &none  &none   &none   &sk TILDE           &none  &none  &none  &none  &none
-                          &none   &none               &none  &none
-            >;
-        };
-
         // Used to change the keyboard's settings
 
         settings_layer {
@@ -261,15 +255,6 @@
   &none        &none  &none  &none       &bt BT_SEL 1    &bt BT_SEL 4  &none  &none     &none  &none
   &none        &none  &none  &none       &bt BT_SEL 2    &bt BT_SEL 5  &none  &none     &none  &none
                              &none       &none           &none         &none
-            >;
-        };
-
-        layer_7 {
-            bindings = <
-  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-                          &trans  &trans    &trans  &trans
             >;
         };
     };
