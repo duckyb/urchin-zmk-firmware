@@ -195,6 +195,11 @@
             bindings = <&kp LC(B)>;
             key-positions = <20 4>;
         };
+
+        Comment {
+            bindings = <&kp LC(SLASH)>;
+            key-positions = <10 14>;
+        };
     };
 
     keymap {
