@@ -147,7 +147,7 @@
         };
 
         Play-Pause {
-            bindings = <&kp K_PLAY_PAUSE>;
+            bindings = <&kp C_PLAY_PAUSE>;
             key-positions = <2 3>;
         };
 
@@ -179,6 +179,21 @@
         PrintScreem {
             bindings = <&kp PRINTSCREEN>;
             key-positions = <0 4>;
+        };
+
+        FormatarVS {
+            bindings = <&kp LA(LS(F))>;
+            key-positions = <20 24>;
+        };
+
+        Terminal {
+            bindings = <&kp LC(GRAVE)>;
+            key-positions = <14 20>;
+        };
+
+        CtrlB {
+            bindings = <&kp LC(B)>;
+            key-positions = <20 4>;
         };
     };
 
