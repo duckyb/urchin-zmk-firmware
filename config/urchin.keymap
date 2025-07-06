@@ -111,10 +111,10 @@
 		ext_layer {
 			label = "Mods";
 			bindings = <
-			&kp ESC  &kp C_PREV &kp C_PP  &kp C_NEXT  &kp C_PAUSE    	&kp PG_UP  &kp HOME &kp UP &kp END &kp CAPS
-			&sk LALT &sk LGUI  &sk LSHIFT  &sk LCTRL  &kp RALT 			&kp PG_DN &kp LEFT  &kp DOWN  &kp RIGHT   &kp DEL
-			&kp LC(Z)  &kp LC(X) &kp LC(C) &kp TAB   &kp LC(V)          &kp LC(BSPC) &kp BSPC &trans &trans  &trans
-																		&trans &kp LCTRL    &kp ENTER  &mo FNC 
+			&kp N1 &kp N2 &kp N3 &kp N4 &kp N5		                           			&kp N6 &kp N7 &kp N8 &kp N9 &kp N0
+			&kp LSHIFT &kp GRAVE &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp TAB  			&kp LEFT_ARROW &kp DOWN_ARROW &kp UP_ARROW &kp RIGHT_ARROW &kp RSHIFT
+			&kp LEFT_ALT &qt LEFT_CONTROL SINGLE_QUOTE &kp TILDE &kp EQUAL &kp PIPE 	&kp ESC &kp BACKSPACE &kp DELETE &kp RIGHT_CONTROL &kp RIGHT_ALT
+																 &trans  &trans      &trans &trans
 			>;
 		};
 
