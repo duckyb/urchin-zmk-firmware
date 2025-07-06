@@ -35,6 +35,14 @@
 			quick-tap-ms = <200>;
 			bindings = <&kp>, <&kp>;
 		};
+		mo_tog: behavior_mo_tog {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>; // Specifies two parameters for this behavior
+            flavor = "hold-preferred"; // Adjust as needed (tap-preferred, balanced)
+            tapping-term-ms = <200> ; // Adjust tap-hold delay
+			quick-tap-ms = <200>;
+            bindings = <&mo>, <&tog>; // Hold action is &mo, Tap action is &tog
+        };
 	};
 
 	macros {
@@ -68,7 +76,7 @@
 			&kp Q &kp W &kp E &kp R &kp T           &kp Y &kp U  &kp I     &kp O   &kp P 
 			&kp A &kp S &kp D &kp F &kp G           &kp H &kp J  &kp K     &kp L &kp SEMI
 			&kp Z &kp X &kp C &kp V &kp B           &kp N &kp M  &kp COMMA &kp DOT &kp SLASH
-							&mo EXT &qt LSHIFT SPACE           &kp SPACE &kp ENTER
+							&mo_tog 1 1 &qt LCMD SPACE           &qt RCMD SPACE &kp ENTER
 			>;
 		};
 
@@ -78,7 +86,7 @@
 			bindings = <
 			&kp N1 &kp N2 &kp N3 &kp N4 &kp N5		                           			&kp N6 &kp N7 &kp N8 &kp N9 &kp N0
 			&kp LSHIFT &kp GRAVE &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp TAB  			&kp LEFT_ARROW &kp DOWN_ARROW &kp UP_ARROW &kp RIGHT_ARROW &kp RSHIFT
-			&kp LEFT_ALT &qt LEFT_CONTROL SINGLE_QUOTE &kp TILDE &kp EQUAL &kp PIPE 	&kp ESC &kp BACKSPACE &kp DELETE &kp RIGHT_CONTROL &kp RIGHT_ALT
+			&kp LEFT_ALT &qt LEFT_CONTROL MINUS &kp TILDE &kp EQUAL &kp PIPE 	&kp ESC &kp BACKSPACE &kp DELETE &kp RIGHT_CONTROL &kp RIGHT_ALT
 																 &trans  &trans      &trans &trans
 			>;
 		};
